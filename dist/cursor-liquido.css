@@ -1,4 +1,4 @@
-/* Cursor líquido 1.0.0. Layers never take input, never hide the native cursor. */
+/* Cursor líquido 1.0.1-rc.1. Layers never take input, never hide the native cursor. */
 .liquid-cursor-layer {
   position: fixed;
   inset: 0;

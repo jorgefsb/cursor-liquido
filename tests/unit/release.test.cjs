@@ -21,8 +21,8 @@ const APPROVED = {
   css: '2ab1b38486d80397480ac29827939eee800e275206419c65e8d0ef8d97ad48a1'
 };
 const approvedWrapper = () => read('src/liquid-cursor.js').toString()
-  .replace('/* Cursor líquido 1.0.0. MIT', '/* Cursor líquido 0.1.0. MIT')
-  .replace("version: '1.0.0',", "version: '0.1.1-recovery',");
+  .replace('/* Cursor líquido 1.0.1-rc.1. MIT', '/* Cursor líquido 0.1.0. MIT')
+  .replace("version: '1.0.1-rc.1',", "version: '0.1.1-recovery',");
 
 test('golden engine is byte-identical', () => {
   assert.equal(GOLDEN_ENGINE_SHA256, '3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230');
@@ -38,7 +38,7 @@ test('engine keeps the Pavel Dobryakov MIT attribution and licence file', () => 
 test('adapter is byte-identical, wrapper and CSS differ only in version metadata', () => {
   assert.equal(sha256(read('src/approved-engine-adapter.js')), APPROVED.adapter);
   assert.equal(sha256(Buffer.from(approvedWrapper())), APPROVED.wrapper);
-  const css = read('src/liquid-cursor.css').toString().replace('/* Cursor líquido 1.0.0.', '/* Cursor líquido 0.1.0.');
+  const css = read('src/liquid-cursor.css').toString().replace('/* Cursor líquido 1.0.1-rc.1.', '/* Cursor líquido 0.1.0.');
   assert.equal(sha256(Buffer.from(css)), APPROVED.css);
 });
 
@@ -53,7 +53,7 @@ test('approved offline HTML is archived verbatim and contains the same sources',
 
 test('src contains only the release sources (retired JS never shipped)', () => {
   assert.deepEqual(fs.readdirSync(path.join(ROOT, 'src')).sort(),
-    ['PAVEL-LICENSE.txt', 'approved-engine-adapter.js', 'approved-fluid-v3.1.js', 'liquid-cursor.css', 'liquid-cursor.js']);
+    ['PAVEL-LICENSE.txt', 'approved-engine-adapter.js', 'approved-fluid-v3.1.js', 'liquid-cursor.css', 'liquid-cursor.js', 'quality-input-guard.js']);
 });
 
 test('sources and bundle parse as scripts', () => {
@@ -73,10 +73,11 @@ test('build is deterministic and dist/ matches a fresh build', () => {
 });
 
 test('bundle is banner + sources concatenated unmodified in load order', () => {
+  assert.deepEqual(LOAD_ORDER, ['src/approved-fluid-v3.1.js', 'src/approved-engine-adapter.js', 'src/quality-input-guard.js', 'src/liquid-cursor.js']);
   const dist = read('dist/cursor-liquido.js');
   const body = Buffer.concat(LOAD_ORDER.map(read));
   assert(dist.subarray(dist.length - body.length).equals(body));
-  assert.match(dist.subarray(0, dist.length - body.length).toString(), /^\/\*! Cursor líquido 1\.0\.0 \| MIT/);
+  assert.match(dist.subarray(0, dist.length - body.length).toString(), /^\/\*! Cursor líquido 1\.0\.1-rc\.1 \| MIT/);
   assert.equal(sha256(read('dist/cursor-liquido.css')), sha256(read('src/liquid-cursor.css')));
 });
 
@@ -85,6 +86,8 @@ test('manifest lists sha256 of every release file plus the golden engine literal
   const pkg = JSON.parse(read('package.json'));
   assert.equal(m.version, pkg.version);
   assert.equal(m.golden_engine_sha256, GOLDEN_ENGINE_SHA256);
+  assert.equal(m.golden_adapter_sha256, APPROVED.adapter);
+  assert.equal(m.release_status, 'local candidate; not stable or published');
   assert.deepEqual(m.load_order, LOAD_ORDER);
   for (const rel of ['dist/cursor-liquido.js', 'dist/cursor-liquido.css', 'dist/LICENSE', 'dist/THIRD_PARTY_NOTICES',
     'examples/cursor-liquido.html', 'demo/index.html', ENGINE, 'docs/media/cursor-liquido-restaurado-real.mp4']) {
@@ -98,6 +101,16 @@ test('manifest lists sha256 of every release file plus the golden engine literal
   assert.equal(m.files[ENGINE].sha256, GOLDEN_ENGINE_SHA256);
 });
 
+test('autonomous candidate embeds exact bundle and CSS without external assets', () => {
+  const html = read('dist/cursor-liquido-standalone.html').toString();
+  assert(html.includes(read('dist/cursor-liquido.js').toString()));
+  assert(html.includes(read('dist/cursor-liquido.css').toString()));
+  assert(html.includes(read('LICENSE').toString()), 'standalone must carry its full MIT notice');
+  assert(html.includes(read('src/PAVEL-LICENSE.txt').toString()), 'standalone must carry the full upstream MIT notice');
+  assert(!/<script[^>]+src=/.test(html));
+  assert(!/<link[^>]+href="(?!data:)/.test(html));
+});
+
 test('package has no runtime dependencies and pins its dev tools', () => {
   const pkg = JSON.parse(read('package.json'));
   assert.equal(pkg.dependencies, undefined);
@@ -106,7 +119,7 @@ test('package has no runtime dependencies and pins its dev tools', () => {
   assert.equal(lock.packages['node_modules/playwright'].version, pkg.devDependencies.playwright);
 });
 
-test('stable release has exactly four intensities (Legendario is only a proposal)', () => {
+test('candidate has exactly four intensities (Legendario is only a proposal)', () => {
   const src = read('src/liquid-cursor.js').toString();
   const block = src.slice(src.indexOf('const INTENSITIES'), src.indexOf('const JZ_LEVELS'));
   assert.deepEqual([...block.matchAll(/^\s+(\w+): Object\.freeze/gm)].map(m => m[1]), ['nada', 'poquito', 'mucho', 'hardcore']);

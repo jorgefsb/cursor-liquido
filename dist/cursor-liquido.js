@@ -1,6 +1,6 @@
-/*! Cursor líquido 1.0.0 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
+/*! Cursor líquido 1.0.1-rc.1 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
  * Fluid display normal/shading adapted from WebGL Fluid Simulation, (c) 2017 Pavel Dobryakov, MIT.
- * Bundle of, in load order, unmodified: src/approved-fluid-v3.1.js, src/approved-engine-adapter.js, src/liquid-cursor.js.
+ * Bundle of, in load order, unmodified: src/approved-fluid-v3.1.js, src/approved-engine-adapter.js, src/quality-input-guard.js, src/liquid-cursor.js.
  * golden_engine_sha256 3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230
  */
 /* Fluid cursor v3. Original site module, no Arcade assets or proprietary code.
@@ -559,7 +559,27 @@
   }
   root.FluidEngine=ApprovedEngineAdapter;
 })(window);
-/* Cursor líquido 1.0.0. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
+/* Recover real queued input across adaptive quality reduction only. */
+(function(root){
+  class QualitySafeAdapter extends root.FluidEngine {
+    watchBudget(ms){
+      const wasReduced=this.qualityReduced;
+      const pending=this.pending, pointer=this.pointer;
+      const width=this.width, height=this.height;
+      const keepRunning=super.watchBudget(ms);
+      // Never retain fields, resize input, cancellation or the hard budget stop.
+      if(keepRunning && !wasReduced && this.qualityReduced && pending &&
+          this.gl && !this.destroyed && !this.lost && !this.media.matches &&
+          this.play!=='off' && this.width===width && this.height===height){
+        this.pending=pending;
+        this.pointer=pointer;
+      }
+      return keepRunning;
+    }
+  }
+  root.FluidEngine=QualitySafeAdapter;
+})(window);
+/* Cursor líquido 1.0.1-rc.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
  * Intensities: nada (off), poquito (orange dots, 2D canvas), mucho (fluid
  * 10 px), hardcore (fluid 18 px). Juice contract on <html data-jz-level>:
  * off=nada, subtle=poquito, full=mucho, hard=hardcore.
@@ -715,7 +735,7 @@
   }
 
   const LiquidCursor = {
-    version: '1.0.0',
+    version: '1.0.1-rc.1',
     intensities: INTENSITIES,
     juiceLevels: JZ_LEVELS,
     normalize,

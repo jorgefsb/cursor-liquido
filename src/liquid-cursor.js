@@ -1,4 +1,4 @@
-/* Cursor líquido 1.0.0. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
+/* Cursor líquido 1.0.1-rc.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
  * Intensities: nada (off), poquito (orange dots, 2D canvas), mucho (fluid
  * 10 px), hardcore (fluid 18 px). Juice contract on <html data-jz-level>:
  * off=nada, subtle=poquito, full=mucho, hard=hardcore.
@@ -154,7 +154,7 @@
   }
 
   const LiquidCursor = {
-    version: '1.0.0',
+    version: '1.0.1-rc.1',
     intensities: INTENSITIES,
     juiceLevels: JZ_LEVELS,
     normalize,

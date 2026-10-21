@@ -1,12 +1,15 @@
 {
   "name": "cursor-liquido",
-  "version": "1.0.0",
+  "version": "1.0.1-rc.1",
   "license": "MIT",
   "golden_engine_sha256": "3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230",
+  "golden_adapter_sha256": "570bb84eea0856393c106d28a8cc01a18a269ffae31c453d30d88be72372ab2c",
+  "release_status": "local candidate; not stable or published",
   "engine": "src/approved-fluid-v3.1.js",
   "load_order": [
     "src/approved-fluid-v3.1.js",
     "src/approved-engine-adapter.js",
+    "src/quality-input-guard.js",
     "src/liquid-cursor.js"
   ],
   "files": {
@@ -19,8 +22,8 @@
       "bytes": 2848
     },
     "demo/index.html": {
-      "sha256": "d312eaa261e2a332ce640188f6bf43de0e7583be55a50e8a83d814cddfe5ccea",
-      "bytes": 7011
+      "sha256": "79fbb013cb2182c61192b27c4e68380c9013278085325e0a9abda9942d82f48f",
+      "bytes": 7021
     },
     "dist/LICENSE": {
       "sha256": "f4864217781bc66ed142a648e070f2e83e94d74d4e1079ef22c3ff7fa4c654aa",
@@ -34,13 +37,17 @@
       "sha256": "b15d4228c822d5c6e1519a48f7cb2d3419c886630de1d80ba25956f643b85d5b",
       "bytes": 2848
     },
+    "dist/cursor-liquido-standalone.html": {
+      "sha256": "f7e7918581e9d9ff86fa906d6c08fdaa44e0ac0b71cfbc57833fdbd0e210b37e",
+      "bytes": 52266
+    },
     "dist/cursor-liquido.css": {
-      "sha256": "6d3194b8848c62962abf5469c99b71b7913ca1afd518f269ed1a6adbe57c650c",
-      "bytes": 480
+      "sha256": "db041f1563e625135ba8ea12363b56a3289b166099f68bad4cb9fa03f25e9ab7",
+      "bytes": 485
     },
     "dist/cursor-liquido.js": {
-      "sha256": "f1fbe1ce66e240ed1214cd377343744bdd892cc46b548c71181e1cad18a175fb",
-      "bytes": 41814
+      "sha256": "cb0fdaf2ce8f75fc729d09f054e952312366e5a36216681a7c24bede77146059",
+      "bytes": 42681
     },
     "docs/media/contact-real.png": {
       "sha256": "2d7aae2677ab7b6b4a51a4cdbba07ef336d9d0fa8a098523c91a33e1f53086fc",
@@ -83,12 +90,16 @@
       "bytes": 31176
     },
     "src/liquid-cursor.css": {
-      "sha256": "6d3194b8848c62962abf5469c99b71b7913ca1afd518f269ed1a6adbe57c650c",
-      "bytes": 480
+      "sha256": "db041f1563e625135ba8ea12363b56a3289b166099f68bad4cb9fa03f25e9ab7",
+      "bytes": 485
     },
     "src/liquid-cursor.js": {
-      "sha256": "979d1a05c6912c16d7b3c42ec37a8ddb48ce261b89bded5c937b7cf1f9ebfe1b",
-      "bytes": 9566
+      "sha256": "3972fcb306f95640e2122b6c2bc6f031f7658f159baeca787bf8a3f39559b340",
+      "bytes": 9576
+    },
+    "src/quality-input-guard.js": {
+      "sha256": "baeb7ce87fe8d62801331af5b7452657594a3cf40b82cd9255c945fa97e33561",
+      "bytes": 824
     }
   }
 }

@@ -12,6 +12,7 @@ const path = require('path');
 const http = require('http');
 const crypto = require('crypto');
 const assert = require('assert/strict');
+const { delayedFrameTouch, nativeTouchPan } = require('./touch-input.cjs');
 
 function loadPlaywright() {
   try { return require('playwright'); } catch (e) {
@@ -168,7 +169,7 @@ async function demoSuite(b, label, url, w) {
       autoMounted: 'fluidCursor' in window, layers: document.querySelectorAll('.liquid-cursor-layer').length,
       dotHosts: document.querySelectorAll('.liquid-original-dots').length, source: LiquidCursor.current.stats.source
     }));
-    assert.deepEqual(v, { version: '1.0.0', engine: 'function', adapter: 'function', autoMounted: false, layers: 2, dotHosts: 1, source: 'data-jz-level' });
+    assert.deepEqual(v, { version: '1.0.1-rc.1', engine: 'function', adapter: 'function', autoMounted: false, layers: 2, dotHosts: 1, source: 'data-jz-level' });
     return v;
   });
   for (const [value, name, radius] of [['off', 'nada', 0], ['subtle', 'poquito', 0], ['full', 'mucho', 10], ['hard', 'hardcore', 18]]) {
@@ -411,18 +412,36 @@ async function demoSuite(b, label, url, w) {
           target.dispatchEvent(new PointerEvent('pointermove', { bubbles: true, clientX: 100 + i * 15, clientY: 440, pointerType: 'touch', isPrimary: true }));
           await new Promise(r => setTimeout(r, 20));
         }
-        return { dots, splats: c.engine.stats.splats, layerPointerEvents: getComputedStyle(document.querySelector('.liquid-cursor-layer')).pointerEvents };
+        return { dots, splats: c.engine.stats.splats, stats: { ...c.engine.stats }, pending: c.engine.pending && { ...c.engine.pending }, raf: c.engine.raf, capturedAt: performance.now(), layerPointerEvents: getComputedStyle(document.querySelector('.liquid-cursor-layer')).pointerEvents };
       }, touch);
-      const off = await run(false), on = await run(true);
+      const off = await run(false), queued = await run(true);
+      // Pointer handling queues input; the solver consumes it on RAF. Fixed
+      // event delays do not guarantee a delivered solver frame. Bound the wait
+      // for the actual result, without calling frame or changing runtime state.
+      // touch-input.cjs reproduces the premature zero with a declared held-RAF
+      // fixture, then requires a single splat and real dye after native delivery.
+      await p.waitForFunction(() => LiquidCursor.current.engine.stats.splats > 0, null, { timeout: 2000 });
+      const completed = await p.evaluate(() => ({ splats: LiquidCursor.current.engine.stats.splats, stats: { ...LiquidCursor.current.engine.stats }, pending: LiquidCursor.current.engine.pending, raf: LiquidCursor.current.engine.raf, capturedAt: performance.now() }));
+      const on = Object.assign({}, queued, completed);
       assert.equal(off.dots, 0); assert.equal(off.splats, 0); assert(on.dots > 0); assert(on.splats > 0);
       assert.equal(off.layerPointerEvents, 'none');
-      // Native touch scrolling still reaches the page.
+      // Wheel scrolling remains usable. Native touch pan is tested separately.
       await p.evaluate(() => { document.body.style.height = '3000px'; });
       await p.touchscreen.tap(300, 400);
       await p.mouse.wheel(0, 400); await p.waitForTimeout(50);
       assert((await p.evaluate(() => scrollY)) > 0);
       assert.deepEqual(p.w.errors, []); await p.close();
-      return { off, on };
+      return { off, queued, on };
+    });
+    await test('touch / queued input survives delayed first RAF delivery', async () => {
+      const p = await page({ hasTouch: true });
+      try { const detail = await delayedFrameTouch(p); assert.deepEqual(p.w.errors, []); return detail; }
+      finally { await p.close(); }
+    });
+    await test('touch / trusted native input renders and native pan cancels without prevention', async () => {
+      const p = await page({ hasTouch: true });
+      try { const detail = await nativeTouchPan(p); assert.deepEqual(p.w.errors, []); return detail; }
+      finally { await p.close(); }
     });
     await test('glyphs / text, typing and clicks unchanged under Hardcore', async () => {
       const p = await page();

@@ -1,3 +1,5 @@
+> Local candidate **1.0.1-rc.1**, not stable or published. See [scope](docs/quality-input-candidate.md).
+
 # Cursor líquido
 
 Una estela para el puntero web: puntitos ligeros o un fluido WebGL2 que choca con los bloques de tu página. El cursor del sistema no cambia, la capa decorativa no intercepta clics y no hay dependencias en runtime.

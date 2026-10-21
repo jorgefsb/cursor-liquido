@@ -10,8 +10,9 @@ const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const GOLDEN_ENGINE_SHA256 = '3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230';
+const GOLDEN_ADAPTER_SHA256 = '570bb84eea0856393c106d28a8cc01a18a269ffae31c453d30d88be72372ab2c';
 const ENGINE = 'src/approved-fluid-v3.1.js';
-const LOAD_ORDER = [ENGINE, 'src/approved-engine-adapter.js', 'src/liquid-cursor.js'];
+const LOAD_ORDER = [ENGINE, 'src/approved-engine-adapter.js', 'src/quality-input-guard.js', 'src/liquid-cursor.js'];
 const CSS = 'src/liquid-cursor.css';
 const COPIES = { 'LICENSE': 'dist/LICENSE', 'THIRD_PARTY_NOTICES': 'dist/THIRD_PARTY_NOTICES', 'src/PAVEL-LICENSE.txt': 'dist/PAVEL-LICENSE.txt' };
 const PAYLOAD_DIRS = ['src', 'demo', 'examples', 'docs/media'];
@@ -25,6 +26,7 @@ function build() {
   if (sha256(engine) !== GOLDEN_ENGINE_SHA256) {
     throw new Error(ENGINE + ' sha256 ' + sha256(engine) + ' does not match the golden engine ' + GOLDEN_ENGINE_SHA256);
   }
+  if (sha256(read('src/approved-engine-adapter.js')) !== GOLDEN_ADAPTER_SHA256) throw new Error('Approved adapter checksum mismatch');
   const banner = Buffer.from([
     '/*! Cursor líquido ' + pkg.version + ' | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES',
     ' * Fluid display normal/shading adapted from WebGL Fluid Simulation, (c) 2017 Pavel Dobryakov, MIT.',
@@ -36,6 +38,11 @@ function build() {
   const out = new Map();
   out.set('dist/cursor-liquido.js', Buffer.concat([banner, ...LOAD_ORDER.map(read)]));
   out.set('dist/cursor-liquido.css', read(CSS));
+  const standalone = read('demo/index.html').toString()
+    .replace('<!doctype html>', '<!doctype html>\n<!--\n' + read('LICENSE').toString() + '\n' + read('src/PAVEL-LICENSE.txt').toString() + '\n-->')
+    .replace('<link rel="stylesheet" href="../dist/cursor-liquido.css">', '<style>' + read(CSS).toString() + '</style>')
+    .replace('<script src="../dist/cursor-liquido.js"></script>', '<script>' + out.get('dist/cursor-liquido.js').toString() + '</script>');
+  out.set('dist/cursor-liquido-standalone.html', Buffer.from(standalone));
   for (const [from, to] of Object.entries(COPIES)) out.set(to, read(from));
 
   const files = {};
@@ -54,6 +61,8 @@ function build() {
     version: pkg.version,
     license: pkg.license,
     golden_engine_sha256: GOLDEN_ENGINE_SHA256,
+    golden_adapter_sha256: GOLDEN_ADAPTER_SHA256,
+    release_status: 'local candidate; not stable or published',
     engine: ENGINE,
     load_order: LOAD_ORDER,
     files

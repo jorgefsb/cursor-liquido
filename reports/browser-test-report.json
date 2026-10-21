@@ -1,23 +1,23 @@
 {
   "package": "cursor-liquido",
-  "version": "1.0.0",
+  "version": "1.0.1-rc.1",
   "golden_engine_sha256": "3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230",
-  "dist_sha256": "f1fbe1ce66e240ed1214cd377343744bdd892cc46b548c71181e1cad18a175fb",
+  "dist_sha256": "cb0fdaf2ce8f75fc729d09f054e952312366e5a36216681a7c24bede77146059",
   "environment": {
     "runner": "Playwright 1.64.1",
     "browser": "Chromium 156.0.8078.4",
     "gl": "ANGLE SwiftShader (software)",
-    "node": "v22.23.3"
+    "node": "v22.22.0"
   },
   "scope": "Packaged dist/ over file:// and an ephemeral local HTTP server, a plain integration fixture, and the archived approved HTML. Deterministic pointer-coordinate field checks plus real Playwright pointer input. Not a certification of physical GPUs, browsers or phones.",
-  "passed": 40,
+  "passed": 42,
   "failed": 0,
   "results": [
     {
       "name": "dist file / bundle boots with one owner and two layers",
       "status": "PASS",
       "detail": {
-        "version": "1.0.0",
+        "version": "1.0.1-rc.1",
         "engine": "function",
         "adapter": "function",
         "autoMounted": false,
@@ -72,8 +72,8 @@
         ],
         "colours": [
           "rgb(244, 232, 213)",
+          "rgb(255, 107, 53)",
           "rgb(34, 33, 31)",
-          "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)"
@@ -86,13 +86,13 @@
       "status": "PASS",
       "detail": {
         "radius": 10,
-        "peak": 0.8896484375,
+        "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 9215,
-          "chromatic": 9200,
-          "neutral": 3,
-          "pixels": 899704,
+          "active": 17822,
+          "chromatic": 17344,
+          "neutral": 25,
+          "pixels": 1140000,
           "error": 0
         }
       }
@@ -110,10 +110,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 23470,
-          "brightNeutral": 16957,
-          "chromaticRatio": 0.06705714285714286,
-          "neutralRatio": 0.04844857142857143
+          "chromatic": 26077,
+          "brightNeutral": 16918,
+          "chromaticRatio": 0.07450571428571429,
+          "neutralRatio": 0.048337142857142856
         }
       }
     },
@@ -122,13 +122,13 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 0.8896484375,
+        "peak": 1.5888671875,
         "last": {
           "frame": 90,
-          "active": 26763,
-          "chromatic": 26746,
-          "neutral": 3,
-          "pixels": 899704,
+          "active": 47926,
+          "chromatic": 47877,
+          "neutral": 4,
+          "pixels": 1140000,
           "error": 0
         }
       }
@@ -146,10 +146,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 35914,
-          "brightNeutral": 16996,
-          "chromaticRatio": 0.10261142857142858,
-          "neutralRatio": 0.04856
+          "chromatic": 37036,
+          "brightNeutral": 17183,
+          "chromaticRatio": 0.10581714285714286,
+          "neutralRatio": 0.049094285714285715
         }
       }
     },
@@ -202,7 +202,7 @@
       "name": "dist http / bundle boots with one owner and two layers",
       "status": "PASS",
       "detail": {
-        "version": "1.0.0",
+        "version": "1.0.1-rc.1",
         "engine": "function",
         "adapter": "function",
         "autoMounted": false,
@@ -256,12 +256,12 @@
           "translate(-50%, -50%) translateY(14px) scale(0.2)"
         ],
         "colours": [
-          "rgb(34, 33, 31)",
-          "rgb(244, 232, 213)",
-          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)"
+          "rgb(244, 232, 213)",
+          "rgb(255, 107, 53)",
+          "rgb(34, 33, 31)"
         ],
         "webgl": false
       }
@@ -271,13 +271,13 @@
       "status": "PASS",
       "detail": {
         "radius": 10,
-        "peak": 0.8896484375,
+        "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 9139,
-          "chromatic": 9136,
+          "active": 17325,
+          "chromatic": 17308,
           "neutral": 0,
-          "pixels": 899704,
+          "pixels": 1140000,
           "error": 0
         }
       }
@@ -295,10 +295,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 24242,
-          "brightNeutral": 16974,
-          "chromaticRatio": 0.06926285714285714,
-          "neutralRatio": 0.04849714285714286
+          "chromatic": 28216,
+          "brightNeutral": 16927,
+          "chromaticRatio": 0.08061714285714286,
+          "neutralRatio": 0.048362857142857145
         }
       }
     },
@@ -307,13 +307,13 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 0.8896484375,
+        "peak": 1.5185546875,
         "last": {
           "frame": 90,
-          "active": 26153,
-          "chromatic": 25893,
-          "neutral": 0,
-          "pixels": 899704,
+          "active": 48908,
+          "chromatic": 48547,
+          "neutral": 17,
+          "pixels": 1140000,
           "error": 0
         }
       }
@@ -331,10 +331,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 45257,
-          "brightNeutral": 17084,
-          "chromaticRatio": 0.12930571428571427,
-          "neutralRatio": 0.04881142857142857
+          "chromatic": 39542,
+          "brightNeutral": 16924,
+          "chromaticRatio": 0.11297714285714286,
+          "neutralRatio": 0.04835428571428572
         }
       }
     },
@@ -483,9 +483,9 @@
         "defaultWalls": 1,
         "bothWalls": 2,
         "dotColours": [
-          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)",
           "rgb(0, 170, 255)",
-          "rgb(244, 232, 213)"
+          "rgb(34, 33, 31)"
         ]
       }
     },
@@ -496,13 +496,211 @@
         "off": {
           "dots": 0,
           "splats": 0,
+          "stats": {
+            "state": "waiting",
+            "frames": 0,
+            "splats": 0,
+            "impacts": 0,
+            "wallCount": 0,
+            "error": null,
+            "quality": "economy",
+            "play": "full",
+            "radius": 18
+          },
+          "pending": null,
+          "raf": 0,
+          "capturedAt": 419,
+          "layerPointerEvents": "none"
+        },
+        "queued": {
+          "dots": 6,
+          "splats": 1,
+          "stats": {
+            "state": "running",
+            "frames": 3,
+            "splats": 1,
+            "impacts": 0,
+            "wallCount": 1,
+            "error": null,
+            "quality": "economy",
+            "play": "full",
+            "radius": 18,
+            "maskUploads": 2
+          },
+          "pending": {
+            "x": 175,
+            "y": 440,
+            "dx": 15,
+            "dy": 0
+          },
+          "raf": 6,
+          "capturedAt": 859.5,
           "layerPointerEvents": "none"
         },
         "on": {
           "dots": 6,
           "splats": 2,
+          "stats": {
+            "state": "running",
+            "frames": 4,
+            "splats": 2,
+            "impacts": 0,
+            "wallCount": 1,
+            "error": null,
+            "quality": "economy",
+            "play": "full",
+            "radius": 18,
+            "maskUploads": 2
+          },
+          "pending": null,
+          "raf": 8,
+          "capturedAt": 891.1999999880791,
           "layerPointerEvents": "none"
         }
+      }
+    },
+    {
+      "name": "touch / queued input survives delayed first RAF delivery",
+      "status": "PASS",
+      "detail": {
+        "fixture": "first RAF delivery held and released onto native RAF",
+        "immediate": {
+          "splats": 0,
+          "frames": 0,
+          "pending": {
+            "x": 175,
+            "y": 440,
+            "dx": 75,
+            "dy": 0
+          }
+        },
+        "completed": {
+          "splats": 1,
+          "frames": 1,
+          "active": 630,
+          "peak": 0.34375,
+          "glError": 0
+        }
+      }
+    },
+    {
+      "name": "touch / trusted native input renders and native pan cancels without prevention",
+      "status": "PASS",
+      "detail": {
+        "nativeSplats": 5,
+        "scrollY": 335,
+        "events": [
+          {
+            "type": "pointerdown",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "touchstart",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "pointerdown",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "touchstart",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "pointermove",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "pointercancel",
+            "trusted": true,
+            "pointerType": "touch",
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
+          }
+        ],
+        "pending": null,
+        "pointer": null
       }
     },
     {
@@ -510,7 +708,7 @@
       "status": "PASS",
       "detail": {
         "counter": "Clics: 2",
-        "field": "Hola \u00f1and\u00fa",
+        "field": "Hola ñandú",
         "hash": "#fin",
         "cursor": "auto",
         "layerEvents": "none",
@@ -546,10 +744,10 @@
         "version": "0.1.1-recovery",
         "last": {
           "frame": 90,
-          "active": 26420,
-          "chromatic": 26182,
-          "neutral": 23,
-          "pixels": 899704,
+          "active": 50160,
+          "chromatic": 49617,
+          "neutral": 44,
+          "pixels": 1140000,
           "error": 0
         }
       }
@@ -558,38 +756,33 @@
   "screenshots": [
     {
       "file": "test-output/dist-file-mucho.png",
-      "sha256": "f9a80fa715c030318205c925d78a9f17b8393fe1a7f4084a3266df5ecfead0e0",
-      "bytes": 109089
+      "sha256": "015bc1b204edc62e95aeca80afee031c9458835f39ec714d6b4618ee9e28c6b9",
+      "bytes": 114864
     },
     {
       "file": "test-output/dist-file-hardcore.png",
-      "sha256": "91ab4eca1c8a7ef5db83b1b720b44b4835140d40619d2d91ed607b9488a97987",
-      "bytes": 146575
+      "sha256": "b40d8debeddc3d1c4291600713e95d83f28daf8bb956d4f43030c549ae46e38b",
+      "bytes": 152369
     },
     {
       "file": "test-output/dist-file-contact.png",
-      "sha256": "23c216f4cfcc297c3afbc3012fea25c05d162dfa74d469067e13f18c7ef5a4db",
-      "bytes": 95360
+      "sha256": "a05efc53e8b3e69920074a30df24a7e946dad593dde740290fed0273784e94c5",
+      "bytes": 95190
     },
     {
       "file": "test-output/dist-http-mucho.png",
-      "sha256": "e4e586d61e174c52e482986a87c1e9154da84cc93bf2749729ca99c571b11138",
-      "bytes": 110112
+      "sha256": "6592ced008c61f487f28b478f411acb51675c418c645b7a13e775fd582655bf7",
+      "bytes": 115941
     },
     {
       "file": "test-output/dist-http-hardcore.png",
-      "sha256": "bdc543bf4428853d278e8a72c8c0f3bb16ade29e71c749678c6e486ca5dc3f59",
-      "bytes": 148090
+      "sha256": "c0dfcd39bfb3722e55936e54ca70cb862ec79cfa82ec69d25ae11761bdb175f7",
+      "bytes": 149191
     },
     {
       "file": "test-output/dist-http-contact.png",
-      "sha256": "5c54b7f7ad1fb389d76b69e27f86d7baa30462e2a22deb88df4a1a503bc9d492",
-      "bytes": 95497
+      "sha256": "9916fd7e3afd29af7a9077072dd2a363b8abd02058a4754e21db37d91ebf5a97",
+      "bytes": 95208
     }
-  ],
-  "provenance": {
-    "kind": "GitHub Actions",
-    "run_url": "https://github.com/jorgefsb/cursor-liquido/actions/runs/39595688216",
-    "commit": "3eb79d26facc55fdb77a22d5466575bd0dcb7fd7"
-  }
+  ]
 }
