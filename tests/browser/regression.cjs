@@ -451,7 +451,10 @@ async function demoSuite(b, label, url, w) {
       assert.equal(await q.evaluate(() => !!(LiquidCursor.current.engine && LiquidCursor.current.engine.gl)), false);
       assert.equal(await q.evaluate(() => getComputedStyle(document.querySelector('.liquid-cursor-layer')).display), 'none');
       await q.emulateMedia({ reducedMotion: 'no-preference' });
-      await q.waitForFunction(() => !LiquidCursor.current.motion.matches);
+      // matchMedia.matches can change before its change listeners run. Wait
+      // for the wrapper's lifecycle handler to create the new engine before
+      // sending pointer input; otherwise a fast runner can lose both moves.
+      await q.waitForFunction(() => !LiquidCursor.current.motion.matches && !!LiquidCursor.current.engine);
       await q.mouse.move(180, 560); await q.mouse.move(210, 580);
       await q.waitForFunction(() => !!(LiquidCursor.current.engine && LiquidCursor.current.engine.gl));
       await q.emulateMedia({ reducedMotion: 'reduce' });
