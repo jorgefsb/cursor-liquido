@@ -1,0 +1,564 @@
+{
+  "package": "cursor-liquido",
+  "version": "1.0.0",
+  "golden_engine_sha256": "3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230",
+  "dist_sha256": "f1fbe1ce66e240ed1214cd377343744bdd892cc46b548c71181e1cad18a175fb",
+  "environment": {
+    "runner": "Playwright 1.64.1",
+    "browser": "Chromium 156.0.8078.4",
+    "gl": "ANGLE SwiftShader (software)",
+    "node": "v22.22.0"
+  },
+  "scope": "Packaged dist/ over file:// and an ephemeral local HTTP server, a plain integration fixture, and the archived approved HTML. Deterministic pointer-coordinate field checks plus real Playwright pointer input. Not a certification of physical GPUs, browsers or phones.",
+  "passed": 38,
+  "failed": 2,
+  "results": [
+    {
+      "name": "dist file / bundle boots with one owner and two layers",
+      "status": "PASS",
+      "detail": {
+        "version": "1.0.0",
+        "engine": "function",
+        "adapter": "function",
+        "autoMounted": false,
+        "layers": 2,
+        "dotHosts": 1,
+        "source": "data-jz-level"
+      }
+    },
+    {
+      "name": "dist file / Juega control nada",
+      "status": "PASS",
+      "detail": {
+        "intensity": "nada",
+        "radius": 0
+      }
+    },
+    {
+      "name": "dist file / Juega control poquito",
+      "status": "PASS",
+      "detail": {
+        "intensity": "poquito",
+        "radius": 0
+      }
+    },
+    {
+      "name": "dist file / Juega control mucho",
+      "status": "PASS",
+      "detail": {
+        "intensity": "mucho",
+        "radius": 10
+      }
+    },
+    {
+      "name": "dist file / Juega control hardcore",
+      "status": "PASS",
+      "detail": {
+        "intensity": "hardcore",
+        "radius": 18
+      }
+    },
+    {
+      "name": "dist file / Poquito reference timing, size, drift and palette",
+      "status": "PASS",
+      "detail": {
+        "alive": 6,
+        "max": 29,
+        "width": "7px",
+        "duration": 480,
+        "keyframes": [
+          "translate(-50%, -50%) scale(1)",
+          "translate(-50%, -50%) translateY(14px) scale(0.2)"
+        ],
+        "colours": [
+          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)",
+          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)",
+          "rgb(34, 33, 31)"
+        ],
+        "webgl": false
+      }
+    },
+    {
+      "name": "dist file / mucho field coloured, localized, finite, no flood",
+      "status": "PASS",
+      "detail": {
+        "radius": 10,
+        "peak": 0.9423828125,
+        "last": {
+          "frame": 90,
+          "active": 17499,
+          "chromatic": 17494,
+          "neutral": 1,
+          "pixels": 1140000,
+          "error": 0
+        }
+      }
+    },
+    {
+      "name": "dist file / mucho real pointer screenshot shows colour without white flood",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "pixels": 350000,
+          "chromatic": 19355,
+          "brightNeutral": 16961,
+          "chromaticRatio": 0.0553,
+          "neutralRatio": 0.04846
+        },
+        "after": {
+          "pixels": 350000,
+          "chromatic": 22174,
+          "brightNeutral": 16971,
+          "chromaticRatio": 0.06335428571428571,
+          "neutralRatio": 0.04848857142857143
+        }
+      }
+    },
+    {
+      "name": "dist file / hardcore field coloured, localized, finite, no flood",
+      "status": "PASS",
+      "detail": {
+        "radius": 18,
+        "peak": 1.3330078125,
+        "last": {
+          "frame": 90,
+          "active": 47126,
+          "chromatic": 46640,
+          "neutral": 26,
+          "pixels": 1140000,
+          "error": 0
+        }
+      }
+    },
+    {
+      "name": "dist file / hardcore real pointer screenshot shows colour without white flood",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "pixels": 350000,
+          "chromatic": 19355,
+          "brightNeutral": 16961,
+          "chromaticRatio": 0.0553,
+          "neutralRatio": 0.04846
+        },
+        "after": {
+          "pixels": 350000,
+          "chromatic": 38604,
+          "brightNeutral": 16965,
+          "chromaticRatio": 0.11029714285714286,
+          "neutralRatio": 0.04847142857142857
+        }
+      }
+    },
+    {
+      "name": "dist file / advect samplers do not alias (white-flood regression)",
+      "status": "PASS",
+      "detail": {
+        "boundary": 3,
+        "source": 0,
+        "velocity": 1
+      }
+    },
+    {
+      "name": "dist file / real pointer contacts the visible obstacle edge",
+      "status": "PASS",
+      "detail": {
+        "impacts": 1,
+        "contact": {
+          "x": 331.796875,
+          "y": 762.75,
+          "nx": -1,
+          "ny": 0,
+          "shape": 2
+        },
+        "edge": 331.796875
+      }
+    },
+    {
+      "name": "dist file / keyboard, typing, Clear, Nada and link work; no errors, no network",
+      "status": "PASS",
+      "detail": {
+        "requests": []
+      }
+    },
+    {
+      "name": "dist file / canvas matches inner viewport with a classic scrollbar",
+      "status": "PASS",
+      "detail": {
+        "inner": 1200,
+        "css": 1200,
+        "engine": 1200
+      }
+    },
+    {
+      "name": "dist file / offline run made zero HTTP requests",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "name": "dist http / bundle boots with one owner and two layers",
+      "status": "PASS",
+      "detail": {
+        "version": "1.0.0",
+        "engine": "function",
+        "adapter": "function",
+        "autoMounted": false,
+        "layers": 2,
+        "dotHosts": 1,
+        "source": "data-jz-level"
+      }
+    },
+    {
+      "name": "dist http / Juega control nada",
+      "status": "PASS",
+      "detail": {
+        "intensity": "nada",
+        "radius": 0
+      }
+    },
+    {
+      "name": "dist http / Juega control poquito",
+      "status": "PASS",
+      "detail": {
+        "intensity": "poquito",
+        "radius": 0
+      }
+    },
+    {
+      "name": "dist http / Juega control mucho",
+      "status": "PASS",
+      "detail": {
+        "intensity": "mucho",
+        "radius": 10
+      }
+    },
+    {
+      "name": "dist http / Juega control hardcore",
+      "status": "PASS",
+      "detail": {
+        "intensity": "hardcore",
+        "radius": 18
+      }
+    },
+    {
+      "name": "dist http / Poquito reference timing, size, drift and palette",
+      "status": "PASS",
+      "detail": {
+        "alive": 6,
+        "max": 29,
+        "width": "7px",
+        "duration": 480,
+        "keyframes": [
+          "translate(-50%, -50%) scale(1)",
+          "translate(-50%, -50%) translateY(14px) scale(0.2)"
+        ],
+        "colours": [
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)",
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)",
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)"
+        ],
+        "webgl": false
+      }
+    },
+    {
+      "name": "dist http / mucho field coloured, localized, finite, no flood",
+      "status": "PASS",
+      "detail": {
+        "radius": 10,
+        "peak": 0.9423828125,
+        "last": {
+          "frame": 90,
+          "active": 17444,
+          "chromatic": 17279,
+          "neutral": 15,
+          "pixels": 1140000,
+          "error": 0
+        }
+      }
+    },
+    {
+      "name": "dist http / mucho real pointer screenshot shows colour without white flood",
+      "status": "FAIL",
+      "detail": "visible coloured trail, fluid {\"state\":\"running\",\"frames\":74,\"splats\":28,\"impacts\":0,\"wallCount\":3,\"error\":null,\"quality\":\"reduced\",\"play\":\"subtle\",\"radius\":10,\"maskUploads\":4}"
+    },
+    {
+      "name": "dist http / hardcore field coloured, localized, finite, no flood",
+      "status": "PASS",
+      "detail": {
+        "radius": 18,
+        "peak": 1.58984375,
+        "last": {
+          "frame": 90,
+          "active": 50631,
+          "chromatic": 50296,
+          "neutral": 14,
+          "pixels": 1140000,
+          "error": 0
+        }
+      }
+    },
+    {
+      "name": "dist http / hardcore real pointer screenshot shows colour without white flood",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "pixels": 350000,
+          "chromatic": 19355,
+          "brightNeutral": 16961,
+          "chromaticRatio": 0.0553,
+          "neutralRatio": 0.04846
+        },
+        "after": {
+          "pixels": 350000,
+          "chromatic": 35610,
+          "brightNeutral": 16958,
+          "chromaticRatio": 0.10174285714285715,
+          "neutralRatio": 0.04845142857142857
+        }
+      }
+    },
+    {
+      "name": "dist http / advect samplers do not alias (white-flood regression)",
+      "status": "PASS",
+      "detail": {
+        "boundary": 3,
+        "source": 0,
+        "velocity": 1
+      }
+    },
+    {
+      "name": "dist http / real pointer contacts the visible obstacle edge",
+      "status": "PASS",
+      "detail": {
+        "impacts": 1,
+        "contact": {
+          "x": 331.796875,
+          "y": 762.75,
+          "nx": -1,
+          "ny": 0,
+          "shape": 2
+        },
+        "edge": 331.796875
+      }
+    },
+    {
+      "name": "dist http / keyboard, typing, Clear, Nada and link work; no errors, no network",
+      "status": "PASS",
+      "detail": {
+        "requests": [
+          "/demo/index.html",
+          "/dist/cursor-liquido.css",
+          "/dist/cursor-liquido.js"
+        ]
+      }
+    },
+    {
+      "name": "dist http / canvas matches inner viewport with a classic scrollbar",
+      "status": "PASS",
+      "detail": {
+        "inner": 1200,
+        "css": 1200,
+        "engine": 1200
+      }
+    },
+    {
+      "name": "dist http / served exactly the demo, CSS and JS bundle",
+      "status": "PASS",
+      "detail": [
+        "/demo/index.html",
+        "/dist/cursor-liquido.css",
+        "/dist/cursor-liquido.js"
+      ]
+    },
+    {
+      "name": "standalone / mount needs explicit intensity; unknown or Legendario rejected",
+      "status": "PASS",
+      "detail": {
+        "none": "LiquidCursor.mount: pass intensity (nada|poquito|mucho|hardcore), followJuice:true or <html data-liquid-intensity>",
+        "legend": "LiquidCursor.mount: unknown intensity legendario",
+        "keys": [
+          "nada",
+          "poquito",
+          "mucho",
+          "hardcore"
+        ]
+      }
+    },
+    {
+      "name": "followJuice / maps data-jz-level to 0/0/10/18 px, read only",
+      "status": "PASS",
+      "detail": {
+        "rows": [
+          {
+            "attr": "off",
+            "intensity": "nada",
+            "radius": 0,
+            "engineRadius": null
+          },
+          {
+            "attr": "subtle",
+            "intensity": "poquito",
+            "radius": 0,
+            "engineRadius": null
+          },
+          {
+            "attr": "full",
+            "intensity": "mucho",
+            "radius": 10,
+            "engineRadius": 10
+          },
+          {
+            "attr": "hard",
+            "intensity": "hardcore",
+            "radius": 18,
+            "engineRadius": 18
+          },
+          {
+            "attr": "mucho",
+            "intensity": "mucho",
+            "radius": 10,
+            "engineRadius": 10
+          },
+          {
+            "attr": "nada",
+            "intensity": "nada",
+            "radius": 0,
+            "engineRadius": 0
+          }
+        ],
+        "unknownValueFallsBackTo": "poquito"
+      }
+    },
+    {
+      "name": "destroy / remount never duplicates layers, listeners or engines",
+      "status": "PASS",
+      "detail": {
+        "live": {
+          "layers": 2,
+          "dotHosts": 1,
+          "fluid": 1
+        },
+        "oldStates": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "after": {
+          "layers": 0,
+          "dotHosts": 0,
+          "fluid": 0
+        },
+        "current": null,
+        "spawnedAfter": 0
+      }
+    },
+    {
+      "name": "options / color, container, obstacleSelector (data-fluid-obstacle not default)",
+      "status": "PASS",
+      "detail": {
+        "color": "#00AAFF",
+        "inHost": 2,
+        "defaultWalls": 1,
+        "bothWalls": 2,
+        "dotColours": [
+          "rgb(0, 170, 255)",
+          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)"
+        ]
+      }
+    },
+    {
+      "name": "touch / ignored by default, opt-in with touch:true",
+      "status": "FAIL",
+      "detail": "The expression evaluated to a falsy value:\n\n  assert(on.splats > 0)\n"
+    },
+    {
+      "name": "glyphs / text, typing and clicks unchanged under Hardcore",
+      "status": "PASS",
+      "detail": {
+        "counter": "Clics: 2",
+        "field": "Hola ñandú",
+        "hash": "#fin",
+        "cursor": "auto",
+        "layerEvents": "none",
+        "glyphs": 97,
+        "elementUnderPointer": "counter"
+      }
+    },
+    {
+      "name": "reduced motion / initial and dynamic preference respected on dist",
+      "status": "PASS",
+      "detail": true
+    },
+    {
+      "name": "no WebGL2 / Mucho reports unsupported, page and Poquito keep working",
+      "status": "PASS",
+      "detail": {
+        "fluid": "unsupported",
+        "dots": 6
+      }
+    },
+    {
+      "name": "mobile / demo has no horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "scroll": 390,
+        "client": 390
+      }
+    },
+    {
+      "name": "archive / approved offline HTML runs every level with no network",
+      "status": "PASS",
+      "detail": {
+        "version": "0.1.1-recovery",
+        "last": {
+          "frame": 90,
+          "active": 50448,
+          "chromatic": 50112,
+          "neutral": 32,
+          "pixels": 1140000,
+          "error": 0
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "test-output/dist-file-mucho.png",
+      "sha256": "27ff50b377bc54b8897a7ca35bd9f8b1a0152a57696607a731e30fc1cf68236e",
+      "bytes": 114686
+    },
+    {
+      "file": "test-output/dist-file-hardcore.png",
+      "sha256": "8ffad8e12ff94eda7559acea727443bdbb12f7414028ea73ad7c25bc4f68a3dd",
+      "bytes": 146669
+    },
+    {
+      "file": "test-output/dist-file-contact.png",
+      "sha256": "5d928b47bbce074ad23ba109b9b3a74e40e2e5ad7370c910c3d67291a3a42162",
+      "bytes": 93724
+    },
+    {
+      "file": "test-output/dist-http-mucho.png",
+      "sha256": "af6617d57f53be4c39f31c580f5d48216c17bca4002ce0ca8ed1632769511cd6",
+      "bytes": 82553
+    },
+    {
+      "file": "test-output/dist-http-hardcore.png",
+      "sha256": "a00de2a01e658b168662077594092373235110b54677e74053fd1f7414c92927",
+      "bytes": 148551
+    },
+    {
+      "file": "test-output/dist-http-contact.png",
+      "sha256": "157aab031796b86933f42e28c0930f1b71d8abf5e9cf65d0d8364de9f5b3f3c3",
+      "bytes": 94575
+    }
+  ]
+}

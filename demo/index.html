@@ -1,0 +1,109 @@
+<!doctype html>
+<!-- Cursor líquido demo. MIT, (c) 2026 Jorge Suárez. Loads the packaged dist/ build. -->
+<html lang="es" data-jz-level="subtle">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Cursor líquido 1.0.0 · demo</title>
+<link rel="stylesheet" href="../dist/cursor-liquido.css">
+<style>
+:root { color-scheme: dark; font-family: system-ui,sans-serif; background: #0a0a0a; color: #fff; --liquid-cursor-color: #FF6B35; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+header { padding: 24px; border-bottom: 1px solid #333; background: #0a0a0a; }
+h1 { font-size: clamp(24px,4vw,42px); margin: 0 0 12px; letter-spacing: -.04em; }
+p { color: #b7b3ad; line-height: 1.5; max-width: 65ch; }
+.controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch; position: relative; z-index: 50; }
+.juega { display: flex; gap: 8px; flex-wrap: wrap; border: 0; margin: 0; padding: 0; }
+.juega legend { font-size: 13px; color: #b7b3ad; margin-bottom: 6px; padding: 0; }
+.juega label { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: center; min-height: 44px; min-width: 150px; padding: 8px 12px; background: #161616; border: 1px solid #8a7e70; border-radius: 6px; cursor: pointer; }
+.juega label:has(input:checked) { border-color: #ff6b35; background: #1d1410; }
+.juega input { accent-color: #ff6b35; margin: 0; grid-row: span 2; }
+.juega b { font-weight: 600; }
+.juega small { color: #b7b3ad; font-size: 12px; }
+.tools { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; }
+button, .field input { min-height: 44px; padding: 8px 14px; background: #161616; color: #fff; border: 1px solid #8a7e70; border-radius: 6px; font: inherit; cursor: pointer; }
+.field { display: grid; gap: 4px; font-size: 13px; color: #b7b3ad; }
+.field input { cursor: text; min-width: 190px; }
+a { color: #ffb08f; }
+.tools a { min-height: 44px; display: inline-flex; align-items: center; }
+button:focus-visible, .juega input:focus-visible, .field input:focus-visible, a:focus-visible { outline: 2px solid #ff6b35; outline-offset: 3px; }
+.arena { min-height: 560px; height: 68vh; position: relative; overflow: hidden; }
+.label { position: absolute; left: 24px; top: 28px; max-width: 42%; pointer-events: none; }
+.label h2 { font-size: clamp(28px,5vw,64px); line-height: 1; letter-spacing: -.05em; margin: 0 0 12px; }
+.wall { position: absolute; right: 0; top: 0; width: 34%; height: 100%; background: #f4e8d5; color: #22211f; padding: 28px; display: flex; align-items: center; }
+.wall p { color: inherit; }
+.island { position: absolute; left: 28%; top: 56%; width: 160px; height: 104px; border-radius: 14px; background: #ff6b35; border: 3px solid #ffd2bd; color: #22211f; display: grid; place-items: center; font-size: 14px; font-weight: 600; }
+footer { padding: 24px; border-top: 1px solid #333; background: #0a0a0a; }
+#status { font: 12px ui-monospace,monospace; white-space: pre-wrap; color: #b7b3ad; }
+@media (max-width: 600px) { .wall { width: 27%; padding: 12px; font-size: 13px; } .island { width: 104px; left: 20%; } .label { max-width: 60%; } .juega label { min-width: 0; flex: 1 1 40%; } }
+</style>
+</head>
+<body>
+<header data-liquid-obstacle>
+  <h1>Cursor líquido 1.0.0</h1>
+  <p>Demo del paquete <code>dist/</code>, mismo motor aprobado. Mueve el mouse en el área oscura y acércate al panel claro, al obstáculo naranja y a las orillas. El cursor del sistema no cambia.</p>
+  <div class="controls">
+    <fieldset class="juega">
+      <legend>Juega</legend>
+      <label><input type="radio" name="juega" value="off"><b>Nada</b><small>Sin efecto.</small></label>
+      <label><input type="radio" name="juega" value="subtle" checked><b>Poquito</b><small>Estela original de referencia.</small></label>
+      <label><input type="radio" name="juega" value="full"><b>Mucho</b><small>Fluido de 10 px.</small></label>
+      <label><input type="radio" name="juega" value="hard"><b>Hardcore</b><small>Fluido de 18 px.</small></label>
+    </fieldset>
+    <div class="tools">
+      <button type="button" id="touch" aria-pressed="false">Probar con dedo: no</button>
+      <button type="button" id="reset">Limpiar</button>
+      <a href="#notas" id="test-link">Probar clic</a>
+      <label class="field">Campo de prueba<input id="texto" type="text" placeholder="Escribe aquí" autocomplete="off"></label>
+    </div>
+  </div>
+</header>
+<main class="arena">
+  <div class="label"><h2>Arrastra.<br>Choca.<br>Deja fluir.</h2><p>Sin bolita oscura. Más intensidad, mayor tamaño. Prueba también las esquinas del obstáculo naranja.</p></div>
+  <aside class="wall" data-liquid-obstacle><p>Panel sólido.<br>Sin luz aquí.<br><br>Busca los remolinos junto a este borde.</p></aside>
+  <div class="island" data-liquid-obstacle>Obstáculo</div>
+</main>
+<footer id="notas">
+  <p>El selector escribe <code>data-jz-level</code> en esta página, como lo haría un control Juega. El módulo solo lee ese atributo. Los lienzos no reciben clics, no capturan el dedo y no bloquean el scroll. Con movimiento reducido o sin WebGL2 la página sigue funcionando. Sin WebGL2, Mucho y Hardcore quedan apagados y Poquito sigue disponible.</p>
+  <pre id="status">Esperando movimiento…</pre>
+</footer>
+<script src="../dist/cursor-liquido.js"></script>
+<script>
+(function () {
+  'use strict';
+  var doc = document.documentElement, touch = false, cursor = LiquidCursor.mount({ followJuice: true, touch: touch });
+  var status = document.getElementById('status'), last = 0, trailing = 0;
+  function render() {
+    last = performance.now();
+    var s = cursor.stats;
+    [].forEach.call(document.querySelectorAll('input[name=juega]'), function (r) { r.checked = LiquidCursor.normalize(r.value) === s.intensity; });
+    status.textContent = JSON.stringify(s, null, 2);
+  }
+  // Status refresh only around interaction: at most 4 per second while the
+  // pointer moves, then one trailing update after the effect goes idle.
+  function soon() {
+    if (performance.now() - last > 250) render();
+    clearTimeout(trailing);
+    trailing = setTimeout(render, 5000);
+  }
+  document.querySelector('.juega').addEventListener('change', function (e) {
+    doc.setAttribute('data-jz-level', e.target.value);
+    // Let the read-only adapter process the mutation before syncing radios.
+    queueMicrotask(render);
+  });
+  document.getElementById('reset').addEventListener('click', function () { cursor.stop(); render(); });
+  document.getElementById('touch').addEventListener('click', function () {
+    touch = !touch;
+    cursor = LiquidCursor.mount({ followJuice: true, touch: touch });
+    this.setAttribute('aria-pressed', String(touch));
+    this.textContent = 'Probar con dedo: ' + (touch ? 'sí' : 'no');
+    render();
+  });
+  window.addEventListener('pointermove', soon, { passive: true });
+  window.liquidDemo = { get cursor() { return cursor; }, render: render };
+  render();
+})();
+</script>
+</body>
+</html>
