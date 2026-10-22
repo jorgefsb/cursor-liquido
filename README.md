@@ -1,33 +1,76 @@
 # Cursor líquido
 
-Una estela para el puntero web: puntitos ligeros o un fluido WebGL2 que choca con los bloques de tu página. El cursor del sistema no cambia, la capa decorativa no intercepta clics y no hay dependencias en runtime.
+[English](README.en.md) · Español
 
-Si te gustan los efectos de las páginas de Jorge, aquí tienes este cursor gratis para usarlo en la tuya. Elige la intensidad, adáptalo a tu proyecto y disfrútalo. Código abierto con licencia MIT.
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/media/cover-es-mobile.png">
+  <img src="docs/media/cover-es.png" alt="Cursor líquido, estela de color junto a un obstáculo real de la demo">
+</picture>
 
-![Cursor líquido en Hardcore, captura animada de una grabación real](docs/media/cursor-liquido-demo.gif)
+Una estela de color que sigue el puntero de tu página. Hecho por [Jorge Suárez](https://brandkit.jorgesuarez.com.mx/).
 
-Versión 1.0.1 · MIT · [video MP4 de la grabación](docs/media/cursor-liquido-restaurado-real.mp4)
+[Descargar demo HTML 1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) · [Ver video real (MP4, 13 s)](docs/media/cursor-liquido-restaurado-real.mp4)
 
-## Cuatro intensidades
+## ¿Qué es?
 
-| Intensidad | `data-jz-level` (Juice) | Qué dibuja |
+Una pieza de código para páginas web. Dibuja puntitos o fluido detrás del puntero; no cambia el cursor del sistema ni intercepta clics. Versión del código en esta copia: 1.0.1, sin dependencias en runtime.
+
+## ¿Para quién es?
+
+Para quien tiene una página y quiere añadir un efecto decorativo al mover el mouse. Puedes probarlo sin programar; para ponerlo en tu sitio necesitas acceso a sus archivos y ayuda de quien lo desarrolla. No requiere Juice, Moki ni una cuenta.
+
+## ¿Por qué se hizo?
+
+Para compartir el efecto de las páginas de Jorge como una pieza reutilizable, con cuatro intensidades y una forma de apagarlo. La decoración no promete más ventas ni mejor usabilidad.
+
+## ¿Cómo lo uso?
+
+Primero descarga o clona [este repositorio](https://github.com/jorgefsb/cursor-liquido). Abre [demo/index.html](demo/index.html) con doble clic en tu navegador. Elige Poquito y mueve el mouse en la zona oscura. Prueba Mucho o Hardcore cerca del obstáculo naranja y del panel claro; Nada apaga el efecto. No hace falta instalar Node para probarlo.
+
+Para compartir un solo archivo sin red, abre [dist/cursor-liquido-standalone.html](dist/cursor-liquido-standalone.html). Si estás leyendo esto en GitHub, descarga primero el archivo: la vista de código no ejecuta la demo. La interfaz original conserva sus etiquetas en español también en la guía inglesa.
+
+![Hardcore: el fluido visible se concentra junto al obstáculo naranja](docs/media/contact-real.png)
+
+Captura real: Hardcore está seleccionado; el fluido aparece junto al bloque naranja y el panel claro queda libre de luz. Es una muestra, no una certificación de dispositivos.
+
+[Ver el video real (13 s)](docs/media/cursor-liquido-restaurado-real.mp4) · [Subtítulos ES](docs/media/walkthrough.es.vtt) · [Explicación por momentos](docs/walkthrough.md) · [Reproductor con subtítulos para abrir localmente](docs/showcase.html)
+
+Para usar el reproductor, descarga o clona el repositorio y abre `docs/showcase.html` en tu navegador. GitHub muestra su código, no un reproductor HTML alojado.
+
+## ¿Cuándo conviene usarlo y cuándo no?
+
+Úsalo como adorno opcional en una página oscura. Evítalo sobre texto con contraste justo, formularios importantes o cuando distraiga. Con movimiento reducido se apaga; en tacto viene apagado. Mucho y Hardcore necesitan WebGL2 y `EXT_color_buffer_float`; sin ellos no dibujan fluido. Poquito no usa WebGL.
+
+Probado con Chromium headless y WebGL por software (SwiftShader), no en teléfonos físicos ni en todas las GPU. `color` solo modifica Poquito; el fluido es multicolor. No hay nivel Legendario implementado.
+
+## ¿Dónde lo pruebo o descargo?
+
+En esta copia local: [demo](demo/index.html) o [archivo autónomo](dist/cursor-liquido-standalone.html). La fuente es [jorgefsb/cursor-liquido](https://github.com/jorgefsb/cursor-liquido). Puedes descargar el [HTML autónomo de Release v1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) o el [ZIP cursor-liquido-1.0.1.zip](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido-1.0.1.zip). Son enlaces de descarga de la release existente, verificados por el responsable del repositorio; no una nueva publicación de este trabajo. No se ha verificado aquí una demo pública alojada. No hay paquete npm publicado: no uses `npm install cursor-liquido`. Esta revisión actualiza documentación; no cambia el runtime ni crea una nueva release.
+
+## Costo, requisitos y privacidad
+
+El código es gratis bajo [MIT](LICENSE), también para uso comercial, conservando los avisos de licencia. La integración, el alojamiento y el soporte de tu sitio pueden tener sus propios costos; no se incluye servicio de instalación ni soporte con plazo garantizado. El motor atribuye a Pavel Dobryakov en [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES).
+
+Para probar: computadora, navegador y mouse; para el fluido, WebGL2 compatible. Para integrar: HTML/CSS/JavaScript y acceso al sitio. Node 18 o superior y Playwright solo se requieren para desarrollo y pruebas.
+
+El módulo trabaja en el navegador: no incluye analítica, cuentas ni solicitudes de red. Las posiciones del puntero se procesan en memoria; el módulo no usa cookies ni almacenamiento local para guardarlas. Destruir la instancia elimina sus capas y listeners. La demo local funciona sin red. Esto no describe las políticas del sitio que lo integre ni de GitHub al descargar. La firma y las imágenes de marca no son MIT: consulta [aviso de recursos](docs/ASSET-NOTICE.md).
+
+## Elegir intensidad
+
+| Intensidad | `data-jz-level` opcional | Resultado |
 |---|---|---|
-| `nada` | `off` | Nada. |
-| `poquito` | `subtle` | Puntitos de 7 px que caen y se apagan en 480 ms. Alternan el color principal (naranja `#FF6B35` por defecto) con oscuro `#22211F` y crema `#F4E8D5`. Sin WebGL. |
-| `mucho` | `full` | Fluido WebGL2 multicolor, radio de 10 px CSS. |
-| `hardcore` | `hard` | Fluido WebGL2 multicolor, radio de 18 px CSS. |
+| `nada` | `off` | Sin efecto. |
+| `poquito` | `subtle` | Puntitos de 7 px, vida de 480 ms, sin WebGL. |
+| `mucho` | `full` | Fluido multicolor, radio de 10 px CSS. |
+| `hardcore` | `hard` | Fluido multicolor, radio de 18 px CSS. |
 
-El fluido usa colores saturados que cambian solos. La opción `color` solo cambia el color principal de Poquito. Detalle en [docs/api.md](docs/api.md).
+![Comparación animada procedente de la grabación aprobada](docs/media/cursor-liquido-demo.gif)
 
-| Poquito | Mucho | Hardcore | Choque con obstáculo |
-|---|---|---|---|
-| ![Poquito](docs/media/poquito-real.png) | ![Mucho](docs/media/mucho-real.png) | ![Hardcore](docs/media/hardcore-real.png) | ![Contacto](docs/media/contact-real.png) |
+Medios reales reutilizados de la demo aprobada, con el mismo motor y adaptador. Capturados mediante entrada de Playwright, 1000 × 850, SwiftShader. La [guía del video](docs/walkthrough.md) explica su procedencia y sus límites.
 
-Capturas y video: demo aprobada (mismo motor y mismo wrapper que esta versión), Chromium headless con WebGL por software (SwiftShader), puntero real de Playwright, viewport de 1000×850. Sin retoque. No son prueba de cómo se ve en cada GPU o teléfono.
+## Para quien desarrolla el sitio
 
-## Inicio rápido
-
-Copia `dist/` a tu sitio como `/vendor/cursor-liquido/` y agrega:
+Copia `dist/` a `/vendor/cursor-liquido/` y agrega después del contenido de la página:
 
 ```html
 <link rel="stylesheet" href="/vendor/cursor-liquido/cursor-liquido.css">
@@ -37,73 +80,19 @@ Copia `dist/` a tu sitio como `/vendor/cursor-liquido/` y agrega:
 </script>
 ```
 
-Marca los bloques sólidos que el fluido debe rodear:
+Marca bloques con `data-liquid-obstacle`. Verifica los archivos contra `dist/manifest.json`. Sin intensidad explícita o atributo de origen, `mount()` lanza error. La integración con Juice es opcional: `LiquidCursor.mount({ followJuice: true })` lee `data-jz-level` sin escribirlo. Una página debe tener un solo dueño del cursor.
 
-```html
-<aside data-liquid-obstacle>…</aside>
-```
-
-Descarga la [versión 1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/tag/v1.0.1) o clona este repositorio. Usa `dist/` y compara sus hashes con `dist/manifest.json`. No hay paquete publicado en npm: no uses `npm install cursor-liquido`.
-
-### Sin menú visible
-
-Elige la intensidad tú, al integrar: `mount({ intensity: 'mucho' })`, o `<html data-liquid-intensity="mucho">` y `mount()`. No se le pregunta nada al visitante y no se fuerza ningún selector. Sin intensidad explícita, `mount()` lanza un error en vez de adivinar.
-
-### Con un control Juega / Juice
-
-```js
-LiquidCursor.mount({ followJuice: true })
-```
-
-Lee `<html data-jz-level>` (solo lectura) y traduce `off/subtle/full/hard` a `nada/poquito/mucho/hardcore`. Nunca pases esos valores directo a un `FluidCursor` antiguo. Ver [docs/integrations.md](docs/integrations.md).
-
-## Demo local
-
-Abre `demo/index.html` en el navegador (funciona sin servidor y sin red). Carga el `dist/` empaquetado. La página aprobada original está archivada sin cambios en `examples/cursor-liquido.html`. Una demo pública en GitHub Pages es posible más adelante, hoy no hay URL publicada.
-
-## Accesibilidad y rendimiento
-
-Con `prefers-reduced-motion: reduce` no hay efecto, al cargar y si la preferencia cambia después. El fluido se detiene en reposo, al hacer scroll y con la pestaña oculta, baja de calidad o se pausa si los frames llegan lentos, y no emite sobre enlaces, botones ni campos. Sin WebGL2, Mucho y Hardcore quedan apagados y Poquito sigue. El tacto está apagado salvo `touch: true`. Ver [docs/accessibility-performance.md](docs/accessibility-performance.md).
-
-Probado en Chromium headless con WebGL por software. No se promete el mismo resultado en todo hardware ni se probó en teléfonos físicos. Las capturas de regresión pausan la animación después de recibir entrada real para que el codificado de PNG no borre la estela por inactividad; no son mediciones de FPS.
-
-## Pruebas
+[API](docs/api.md) · [Integraciones](docs/integrations.md) · [Accesibilidad y rendimiento](docs/accessibility-performance.md) · [Apagar o volver atrás](docs/rollback.md) · [Planes, no implementados](docs/roadmap.md) · [Cambio técnico 1.0.1](docs/quality-input-candidate.es.md)
 
 ```sh
 npm ci
-npm test               # hash del motor, build determinista, manifest, sintaxis, privacidad
-npm run test:browser   # navegador real sobre dist/ (file:// y HTTP), 42 casos
-npm run test:quality   # 8 comparaciones A-B-B-A de reducción de calidad y sus protecciones
+npm test
+npm run test:browser
+npm run test:quality
 ```
 
-Para reutilizar un Playwright ya instalado: `PLAYWRIGHT_MODULE=/ruta/a/node_modules/playwright npm run test:browser`. El último resultado está en [reports/browser-test-report.json](reports/browser-test-report.json).
+Para reutilizar Playwright instalado, usa `PLAYWRIGHT_MODULE=/ruta/absoluta/a/node_modules/playwright`. [Contribuir](CONTRIBUTING.md) · [Instrucciones para agentes](skills/cursor-liquido/SKILL.es.md) · [Reglas de documentación](docs/REPOSITORY-DOCUMENTATION.md). [CHANGELOG](CHANGELOG.md) y [RELEASE-NOTES](RELEASE-NOTES.md) conservan los registros históricos sin traducir eventos.
 
-## English usage
+## Ayuda
 
-Cursor líquido draws a pointer trail behind the native cursor: light dots (`poquito`) or a WebGL2 fluid (`mucho`, 10 CSS px, `hardcore`, 18 CSS px) that flows around elements marked `data-liquid-obstacle`. No runtime dependencies. Layers never take input.
-
-```html
-<link rel="stylesheet" href="/vendor/cursor-liquido/cursor-liquido.css">
-<script src="/vendor/cursor-liquido/cursor-liquido.js"></script>
-<script>
-  LiquidCursor.mount({ intensity: 'poquito' }) // 'nada' | 'poquito' | 'mucho' | 'hardcore'
-  // or follow a Juice control: LiquidCursor.mount({ followJuice: true })
-</script>
-```
-
-Options: `touch` (default `false`), `color` (Poquito's main dot colour, default `#FF6B35`), `obstacleSelector` (default `[data-liquid-obstacle]`), `container` (default `document.body`). Reduced motion disables the effect. Not published to npm yet. Copy `dist/` and verify it against `dist/manifest.json`. Full API: [docs/api.md](docs/api.md).
-
-## Más
-
-- [docs/api.md](docs/api.md): API, opciones reales y `stats`.
-- [docs/integrations.md](docs/integrations.md): Juice, Game Feel, Papacito Juice, un solo dueño del cursor.
-- [docs/rollback.md](docs/rollback.md): cómo apagar o volver a la versión anterior.
-- [docs/roadmap.md](docs/roadmap.md): ideas futuras, incluida la propuesta Legendario (no implementada).
-- [skills/cursor-liquido/SKILL.md](skills/cursor-liquido/SKILL.md): instrucciones para agentes (Claude, Codex, ChatGPT).
-- [CHANGELOG.md](CHANGELOG.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Licencia
-
-Código MIT, (c) 2026 Jorge Suárez ([LICENSE](LICENSE)). El sombreado del fluido está adaptado de WebGL Fluid Simulation de Pavel Dobryakov (MIT), ver [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES). Este repositorio no incluye ni licencia a Moki ni otros recursos de marca.
-
-Fuente: [jorgefsb/cursor-liquido](https://github.com/jorgefsb/cursor-liquido).
+Si falla, elige `poquito` o [apaga el efecto](docs/rollback.md). Abre un [issue](https://github.com/jorgefsb/cursor-liquido/issues) con versión, navegador, sistema y GPU si la conoces, sin información personal. Para instalarlo en una página, comparte la guía técnica con quien mantiene tu sitio.

@@ -71,12 +71,12 @@
           "translate(-50%, -50%) translateY(14px) scale(0.2)"
         ],
         "colours": [
+          "rgb(34, 33, 31)",
           "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)",
-          "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)"
+          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)"
         ],
         "webgl": false
       }
@@ -89,9 +89,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 18085,
-          "chromatic": 18015,
-          "neutral": 8,
+          "active": 17123,
+          "chromatic": 17099,
+          "neutral": 0,
           "pixels": 1140000,
           "error": 0
         }
@@ -110,10 +110,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 25387,
-          "brightNeutral": 16931,
-          "chromaticRatio": 0.07253428571428572,
-          "neutralRatio": 0.04837428571428572
+          "chromatic": 20220,
+          "brightNeutral": 16961,
+          "chromaticRatio": 0.05777142857142857,
+          "neutralRatio": 0.04846
         }
       }
     },
@@ -122,12 +122,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.291015625,
+        "peak": 1.630859375,
         "last": {
           "frame": 90,
-          "active": 48482,
-          "chromatic": 48413,
-          "neutral": 13,
+          "active": 48626,
+          "chromatic": 48355,
+          "neutral": 39,
           "pixels": 1140000,
           "error": 0
         }
@@ -146,10 +146,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 40702,
-          "brightNeutral": 16936,
-          "chromaticRatio": 0.11629142857142857,
-          "neutralRatio": 0.04838857142857143
+          "chromatic": 44379,
+          "brightNeutral": 16973,
+          "chromaticRatio": 0.12679714285714286,
+          "neutralRatio": 0.04849428571428571
         }
       }
     },
@@ -259,7 +259,7 @@
           "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
           "rgb(244, 232, 213)"
         ],
@@ -274,9 +274,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 17201,
-          "chromatic": 17143,
-          "neutral": 7,
+          "active": 17803,
+          "chromatic": 17736,
+          "neutral": 0,
           "pixels": 1140000,
           "error": 0
         }
@@ -295,10 +295,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 27002,
-          "brightNeutral": 16947,
-          "chromaticRatio": 0.07714857142857143,
-          "neutralRatio": 0.04842
+          "chromatic": 26685,
+          "brightNeutral": 16955,
+          "chromaticRatio": 0.07624285714285714,
+          "neutralRatio": 0.04844285714285714
         }
       }
     },
@@ -307,12 +307,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.3115234375,
+        "peak": 1.314453125,
         "last": {
           "frame": 90,
-          "active": 47582,
-          "chromatic": 47582,
-          "neutral": 0,
+          "active": 49177,
+          "chromatic": 48239,
+          "neutral": 92,
           "pixels": 1140000,
           "error": 0
         }
@@ -331,10 +331,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 42649,
-          "brightNeutral": 16932,
-          "chromaticRatio": 0.12185428571428572,
-          "neutralRatio": 0.048377142857142855
+          "chromatic": 27026,
+          "brightNeutral": 16965,
+          "chromaticRatio": 0.07721714285714286,
+          "neutralRatio": 0.04847142857142857
         }
       }
     },
@@ -509,7 +509,7 @@
           },
           "pending": null,
           "raf": 0,
-          "capturedAt": 432.6000000014901,
+          "capturedAt": 427.30000000447035,
           "layerPointerEvents": "none"
         },
         "queued": {
@@ -527,23 +527,18 @@
             "radius": 18,
             "maskUploads": 2
           },
-          "pending": {
-            "x": 175,
-            "y": 440,
-            "dx": 15,
-            "dy": 0
-          },
-          "raf": 6,
-          "capturedAt": 881,
+          "pending": null,
+          "raf": 5,
+          "capturedAt": 868.7000000029802,
           "layerPointerEvents": "none"
         },
         "on": {
           "dots": 6,
-          "splats": 2,
+          "splats": 1,
           "stats": {
             "state": "running",
-            "frames": 5,
-            "splats": 2,
+            "frames": 4,
+            "splats": 1,
             "impacts": 0,
             "wallCount": 1,
             "error": null,
@@ -553,8 +548,8 @@
             "maskUploads": 2
           },
           "pending": null,
-          "raf": 9,
-          "capturedAt": 927.9000000059605,
+          "raf": 7,
+          "capturedAt": 897.7000000029802,
           "layerPointerEvents": "none"
         }
       }
@@ -691,6 +686,12 @@
             "trusted": true,
             "pointerType": null,
             "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
           }
         ],
         "pending": null,
@@ -738,9 +739,9 @@
         "version": "0.1.1-recovery",
         "last": {
           "frame": 90,
-          "active": 49373,
-          "chromatic": 48529,
-          "neutral": 234,
+          "active": 47967,
+          "chromatic": 46941,
+          "neutral": 146,
           "pixels": 1140000,
           "error": 0
         }
@@ -750,33 +751,33 @@
   "screenshots": [
     {
       "file": "test-output/dist-file-mucho.png",
-      "sha256": "bec34cfe330b5306ee359645ba1a1c39a35c09a054cefbc7d9c5221aecd2f997",
-      "bytes": 116632
+      "sha256": "7bc1241734a0bedcb994b95f14aa7324bd1ec6ddc851d0fd0f47206b3b76b751",
+      "bytes": 84798
     },
     {
       "file": "test-output/dist-file-hardcore.png",
-      "sha256": "b56fb5fe83d30efa5bd2a6d85247fbb18459bc02e68a99a2dba84387e5a997fb",
-      "bytes": 149675
+      "sha256": "f443c1275f237016dd90d0f40e1523f15e9fed448b26763e9a5443596dc7be54",
+      "bytes": 150766
     },
     {
       "file": "test-output/dist-file-contact.png",
-      "sha256": "7f88018eecb674cd89e06a535d0b95d221b846929c7b54ad63da79f9af37e6e4",
-      "bytes": 94198
+      "sha256": "019ee6f5b2c12a91cd16b5f39dcf87e39ac9e9ec0872980ca2244d1cbbe67b35",
+      "bytes": 94492
     },
     {
       "file": "test-output/dist-http-mucho.png",
-      "sha256": "ee17bcfeafa10e6a261cadd61d0b93e60133f8f727edb7d9678b6617437f18aa",
-      "bytes": 114349
+      "sha256": "421c81ca790ca58983eaf3ebf212d260ba32ef20c64be14ca23a372ce7e5fe49",
+      "bytes": 113311
     },
     {
       "file": "test-output/dist-http-hardcore.png",
-      "sha256": "a5cab0a0910b39009655a2430d9754e444cfb14a7ae24df32fdb530ab42e70a1",
-      "bytes": 147603
+      "sha256": "ac7290e93a6f642d82631518062bfedeaa7f362b5b5b550931313925d0ba6860",
+      "bytes": 104634
     },
     {
       "file": "test-output/dist-http-contact.png",
-      "sha256": "42522abd58f91b7482c78141017fd764667de191c99e45a3f6bd851eb16babee",
-      "bytes": 94531
+      "sha256": "5899a433003e26286653b9f1fe20bec6dd12e456b9c3ad04d4147405c37476eb",
+      "bytes": 94593
     }
   ]
 }

@@ -1,0 +1,249 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "lang": "es",
+      "size": "desktop",
+      "kind": "preview",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-es.png",
+      "h2": [
+        "¿Qué es?",
+        "¿Para quién es?",
+        "¿Por qué se hizo?",
+        "¿Cómo lo uso?",
+        "¿Cuándo conviene usarlo y cuándo no?",
+        "¿Dónde lo pruebo o descargo?",
+        "Costo, requisitos y privacidad",
+        "Elegir intensidad",
+        "Para quien desarrolla el sitio",
+        "Ayuda"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "es",
+      "size": "desktop",
+      "kind": "showcase",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-es.png",
+      "h2": [
+        "Qué mirar",
+        "Procedencia y límites"
+      ],
+      "video": {
+        "width": 1000,
+        "height": 850,
+        "duration": 13.04,
+        "time": 0.6059,
+        "tracks": [
+          {
+            "language": "es",
+            "cues": 4,
+            "mode": "showing",
+            "active": [
+              "Hardcore seleccionado. Cuatro niveles; Nada apaga el efecto."
+            ]
+          },
+          {
+            "language": "en",
+            "cues": 0,
+            "mode": "disabled",
+            "active": []
+          }
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "es",
+      "size": "mobile",
+      "kind": "preview",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-es-mobile.png",
+      "h2": [
+        "¿Qué es?",
+        "¿Para quién es?",
+        "¿Por qué se hizo?",
+        "¿Cómo lo uso?",
+        "¿Cuándo conviene usarlo y cuándo no?",
+        "¿Dónde lo pruebo o descargo?",
+        "Costo, requisitos y privacidad",
+        "Elegir intensidad",
+        "Para quien desarrolla el sitio",
+        "Ayuda"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "es",
+      "size": "mobile",
+      "kind": "showcase",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-es-mobile.png",
+      "h2": [
+        "Qué mirar",
+        "Procedencia y límites"
+      ],
+      "video": {
+        "width": 1000,
+        "height": 850,
+        "duration": 13.04,
+        "time": 0.6061,
+        "tracks": [
+          {
+            "language": "es",
+            "cues": 4,
+            "mode": "showing",
+            "active": [
+              "Hardcore seleccionado. Cuatro niveles; Nada apaga el efecto."
+            ]
+          },
+          {
+            "language": "en",
+            "cues": 0,
+            "mode": "disabled",
+            "active": []
+          }
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "en",
+      "size": "desktop",
+      "kind": "preview",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-en.png",
+      "h2": [
+        "What is it?",
+        "Who is it for?",
+        "Why was it made?",
+        "How do I use it?",
+        "When should or shouldn't I use it?",
+        "Where can I try or download it?",
+        "Cost, requirements and privacy",
+        "Choose an intensity",
+        "For the site developer",
+        "Help"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "en",
+      "size": "desktop",
+      "kind": "showcase",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-en.png",
+      "h2": [
+        "What to look for",
+        "Provenance and limits"
+      ],
+      "video": {
+        "width": 1000,
+        "height": 850,
+        "duration": 13.04,
+        "time": 0.6052,
+        "tracks": [
+          {
+            "language": "es",
+            "cues": 0,
+            "mode": "disabled",
+            "active": []
+          },
+          {
+            "language": "en",
+            "cues": 4,
+            "mode": "showing",
+            "active": [
+              "Hardcore selected. Four levels; Nada turns the effect off."
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "en",
+      "size": "mobile",
+      "kind": "preview",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-en-mobile.png",
+      "h2": [
+        "What is it?",
+        "Who is it for?",
+        "Why was it made?",
+        "How do I use it?",
+        "When should or shouldn't I use it?",
+        "Where can I try or download it?",
+        "Cost, requirements and privacy",
+        "Choose an intensity",
+        "For the site developer",
+        "Help"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "lang": "en",
+      "size": "mobile",
+      "kind": "showcase",
+      "overflow": false,
+      "broken": [],
+      "font": true,
+      "cover": "cover-en-mobile.png",
+      "h2": [
+        "What to look for",
+        "Provenance and limits"
+      ],
+      "video": {
+        "width": 1000,
+        "height": 850,
+        "duration": 13.04,
+        "time": 0.6056,
+        "tracks": [
+          {
+            "language": "es",
+            "cues": 0,
+            "mode": "disabled",
+            "active": []
+          },
+          {
+            "language": "en",
+            "cues": 4,
+            "mode": "showing",
+            "active": [
+              "Hardcore selected. Four levels; Nada turns the effect off."
+            ]
+          }
+        ]
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "kind": "offline-caption-check",
+      "cues": 4
+    }
+  ]
+}

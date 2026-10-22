@@ -1,6 +1,8 @@
 # Roadmap
 
-Nada de esta página está implementado en 1.0.0. Son ideas, sin fecha.
+Español · [English](roadmap.en.md)
+
+Estas ideas no están implementadas en el código local 1.0.1. Son ideas, sin fecha. El responsable del repositorio verificó los enlaces de la release v1.0.1 que aparecen en el [README](../README.md).
 
 ## Propuesta: nivel Legendario
 
@@ -16,7 +18,7 @@ Antes de implementarlo haría falta:
 ## Otros pendientes
 
 - Demo pública en GitHub Pages a partir de `demo/index.html`.
-- Descargas versionadas en GitHub Releases.
+- Mantener y comprobar las descargas versionadas de futuras GitHub Releases.
 - Paquete en npm, cuando exista el registro.
 - Build de módulo ES además del script clásico.
 - Pruebas en GPUs, navegadores y teléfonos físicos. Hoy solo hay Chromium headless con WebGL por software.

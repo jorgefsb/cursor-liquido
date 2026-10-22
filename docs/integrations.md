@@ -1,5 +1,7 @@
 # Integraciones
 
+Español · [English](integrations.en.md)
+
 ## Regla base: un solo dueño del cursor
 
 Una página tiene una sola estela. Antes de montar Cursor líquido, identifica si la página ya trae otra (un trail de Juice, un `FluidCursor` montado en `#fluid-canvas`, una librería de terceros) y apágala por el interruptor que esa pieza documente. Si no tiene uno, no la parches para esconderla: resuelve primero quién es el dueño. Dentro del paquete, `LiquidCursor.mount` ya garantiza una sola instancia viva.

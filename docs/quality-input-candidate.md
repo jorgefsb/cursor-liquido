@@ -1,5 +1,7 @@
 # 1.0.1: adaptive-quality input preservation
 
+English · [Español](quality-input-candidate.es.md)
+
 The approved engine and adapter remain byte-identical. An external subclass,
 loaded after the approved adapter and before the wrapper, retains only a real
 queued pointer gesture across the first adaptive-quality resize when CSS

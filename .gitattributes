@@ -1,0 +1,2 @@
+# Preserve official font/license bytes, including original OFL whitespace.
+docs/media/brand/* -whitespace

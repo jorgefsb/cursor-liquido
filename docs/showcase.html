@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cursor líquido · Mueve el mouse. Mira la estela.</title><link rel="stylesheet" href="reading.css"><main><nav><a href="../README.md">Guía completa</a><a href="showcase.en.html">English</a><a href="../demo/index.html">Abrir demo real</a></nav><picture class="hero"><source media="(max-width:600px)" srcset="media/cover-es-mobile.png"><img src="media/cover-es.png" alt="Cursor líquido, captura real de Hardcore"></picture><h1>Mueve el mouse. Mira la estela.</h1><p class="lead">Cuatro intensidades para una página web. Aquí ves el motor real, no una interfaz inventada.</p><section class="player" aria-label="Video con subtítulos"><video controls preload="metadata" playsinline poster="media/hardcore-real.png"> <source src="media/cursor-liquido-restaurado-real.mp4" type="video/mp4"><track kind="captions" srclang="es" label="Español" data-vtt="es" default><track kind="captions" srclang="en" label="English" data-vtt="en" ></video><p class="note">13.04 s · Sin audio · Subtítulos ES/EN en el control CC del video.</p></section><h1>Ver el cursor en acción</h1>
+<p>Español · <a href="walkthrough.en.md">English</a> · <a href="../README.md">Volver</a></p>
+<p><a href="showcase.html">Reproductor con subtítulos</a> · <a href="media/cursor-liquido-restaurado-real.mp4">MP4 original</a> · <a href="media/walkthrough.es.vtt">VTT español</a></p>
+<h2>Qué mirar</h2>
+<table>
+<thead>
+<tr>
+<th>Momento</th>
+<th>Explicación visual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00-00:03</td>
+<td>La demo muestra los cuatro niveles; Hardcore está seleccionado. El área oscura deja ver la estela.</td>
+</tr>
+<tr>
+<td>00:03-00:06</td>
+<td>El puntero recorre la zona oscura. Se ve una estela de fluido multicolor.</td>
+</tr>
+<tr>
+<td>00:06-00:09</td>
+<td>Observa el obstáculo naranja y el límite del panel claro. Son superficies sólidas de esta demostración.</td>
+</tr>
+<tr>
+<td>00:09-00:13.04</td>
+<td>La grabación termina con Mucho seleccionado, el nivel de radio menor. Para comparar por tu cuenta abre la demo local.</td>
+</tr>
+</tbody>
+</table>
+<p>Estos textos son explicaciones editoriales, no transcripción de voz. El video original no tiene pista de audio. La interfaz conserva español en ambos reproductores; el inglés traduce la explicación, no fabrica una nueva interfaz. Nada significa apagado; Poquito, puntitos; Mucho y Hardcore, fluido de 10 y 18 px CSS.</p>
+<h2>Procedencia y límites</h2>
+<p>Se reutilizan byte por byte <code>cursor-liquido-restaurado-real.mp4</code>, <code>cursor-liquido-demo.gif</code> y las cuatro capturas <code>*-real.png</code> que ya estaban en la base de este repositorio. La captura original declaró Chromium headless, WebGL por software SwiftShader, viewport 1000 × 850 y mouse de Playwright sobre la demo aprobada. Se conserva el mismo motor y adaptador en el código local 1.0.1; la grabación representa su aspecto, no demuestra por sí sola la corrección nueva de calidad adaptativa. Esa corrección tiene sus <a href="quality-input-candidate.es.md">pruebas separadas</a>.</p>
+<p>El MP4 dura 13.04 s, H.264, 1000 × 850. No se edita el video ni se sustituyen píxeles de interfaz. El player agrega dos pistas VTT seleccionables y texto legible fuera del video. El GIF conserva su animación original. La cubierta usa un recorte de <code>hardcore-real.png</code>; la portada móvil muestra la captura completa a escala.</p>
+<p>Las capturas de regresión originales pausaron la animación tras entrada real para que la codificación PNG no borrara la estela por inactividad. No miden FPS ni certifican GPU o teléfonos físicos. No hay datos personales en la demo.</p><footer><a href="ASSET-NOTICE.md">Aviso de marca y fuentes</a> · <a href="https://brandkit.jorgesuarez.com.mx/">Jorge Suárez</a></footer></main><script>const cues={"es": "WEBVTT\n\n00:00:00.000 --> 00:00:03.000\nHardcore seleccionado. Cuatro niveles; Nada apaga el efecto.\n\n00:00:03.000 --> 00:00:06.000\nEstela multicolor sobre el área oscura de la demo.\n\n00:00:06.000 --> 00:00:09.000\nObserva el obstáculo naranja y el límite del panel claro.\n\n00:00:09.000 --> 00:00:13.040\nMucho seleccionado al final. Pruébalo en la demo local.\n", "en": "WEBVTT\n\n00:00:00.000 --> 00:00:03.000\nHardcore selected. Four levels; Nada turns the effect off.\n\n00:00:03.000 --> 00:00:06.000\nA multicolored trail over the dark demo area.\n\n00:00:06.000 --> 00:00:09.000\nLook at the orange obstacle and the light panel boundary.\n\n00:00:09.000 --> 00:00:13.040\nMucho selected at the end. Try the local demo yourself.\n"};document.querySelectorAll("track").forEach(t=>{t.src=URL.createObjectURL(new Blob([cues[t.dataset.vtt]],{type:"text/vtt"}));});</script></html>
