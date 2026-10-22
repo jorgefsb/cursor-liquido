@@ -1,0 +1,81 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="../"><title>README es · Cursor líquido</title><link rel="stylesheet" href="docs/reading.css"><main><h1>Cursor líquido</h1>
+<p><a href="README.en.md">English</a> · Español</p>
+<p><picture>
+  <source media="(max-width: 600px)" srcset="docs/media/cover-es-mobile.png">
+  <img src="docs/media/cover-es.png" alt="Cursor líquido, estela de color junto a un obstáculo real de la demo">
+</picture></p>
+<p>Una estela de color que sigue el puntero de tu página. Hecho por <a href="https://brandkit.jorgesuarez.com.mx/">Jorge Suárez</a>.</p>
+<p><a href="https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html">Descargar demo HTML 1.0.1</a> · <a href="docs/showcase.html">Ver demostración explicada</a></p>
+<h2>¿Qué es?</h2>
+<p>Una pieza de código para páginas web. Dibuja puntitos o fluido detrás del puntero; no cambia el cursor del sistema ni intercepta clics. Versión del código en esta copia: 1.0.1, sin dependencias en runtime.</p>
+<h2>¿Para quién es?</h2>
+<p>Para quien tiene una página y quiere añadir un efecto decorativo al mover el mouse. Puedes probarlo sin programar; para ponerlo en tu sitio necesitas acceso a sus archivos y ayuda de quien lo desarrolla. No requiere Juice, Moki ni una cuenta.</p>
+<h2>¿Por qué se hizo?</h2>
+<p>Para compartir el efecto de las páginas de Jorge como una pieza reutilizable, con cuatro intensidades y una forma de apagarlo. La decoración no promete más ventas ni mejor usabilidad.</p>
+<h2>¿Cómo lo uso?</h2>
+<p>Primero descarga o clona <a href="https://github.com/jorgefsb/cursor-liquido">este repositorio</a>. Abre <a href="demo/index.html">demo/index.html</a> con doble clic en tu navegador. Elige Poquito y mueve el mouse en la zona oscura. Prueba Mucho o Hardcore cerca del obstáculo naranja y del panel claro; Nada apaga el efecto. No hace falta instalar Node para probarlo.</p>
+<p>Para compartir un solo archivo sin red, abre <a href="dist/cursor-liquido-standalone.html">dist/cursor-liquido-standalone.html</a>. Si estás leyendo esto en GitHub, descarga primero el archivo: la vista de código no ejecuta la demo. La interfaz original conserva sus etiquetas en español también en la guía inglesa.</p>
+<p><img alt="Hardcore: el fluido visible se concentra junto al obstáculo naranja" src="docs/media/contact-real.png" /></p>
+<p>Captura real: Hardcore está seleccionado; el fluido aparece junto al bloque naranja y el panel claro queda libre de luz. Es una muestra, no una certificación de dispositivos.</p>
+<p><a href="docs/media/cursor-liquido-restaurado-real.mp4">Ver el video real (13 s)</a> · <a href="docs/media/walkthrough.es.vtt">Subtítulos ES</a> · <a href="docs/walkthrough.md">Explicación por momentos</a> · <a href="docs/showcase.html">Reproductor local con subtítulos</a></p>
+<h2>¿Cuándo conviene usarlo y cuándo no?</h2>
+<p>Úsalo como adorno opcional en una página oscura. Evítalo sobre texto con contraste justo, formularios importantes o cuando distraiga. Con movimiento reducido se apaga; en tacto viene apagado. Mucho y Hardcore necesitan WebGL2 y <code>EXT_color_buffer_float</code>; sin ellos no dibujan fluido. Poquito no usa WebGL.</p>
+<p>Probado con Chromium headless y WebGL por software (SwiftShader), no en teléfonos físicos ni en todas las GPU. <code>color</code> solo modifica Poquito; el fluido es multicolor. No hay nivel Legendario implementado.</p>
+<h2>¿Dónde lo pruebo o descargo?</h2>
+<p>En esta copia local: <a href="demo/index.html">demo</a> o <a href="dist/cursor-liquido-standalone.html">archivo autónomo</a>. La fuente es <a href="https://github.com/jorgefsb/cursor-liquido">jorgefsb/cursor-liquido</a>. Puedes descargar el <a href="https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html">HTML autónomo de Release v1.0.1</a> o el <a href="https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido-1.0.1.zip">ZIP cursor-liquido-1.0.1.zip</a>. Son enlaces de descarga de la release existente, verificados por el responsable del repositorio; no una nueva publicación de este trabajo. No se ha verificado aquí una demo pública alojada. No hay paquete npm publicado: no uses <code>npm install cursor-liquido</code>. Este cambio de documentación es local y no publica nada.</p>
+<h2>Costo, requisitos y privacidad</h2>
+<p>El código es gratis bajo <a href="LICENSE">MIT</a>, también para uso comercial, conservando los avisos de licencia. La integración, el alojamiento y el soporte de tu sitio pueden tener sus propios costos; no se incluye servicio de instalación ni soporte con plazo garantizado. El motor atribuye a Pavel Dobryakov en <a href="THIRD_PARTY_NOTICES">THIRD_PARTY_NOTICES</a>.</p>
+<p>Para probar: computadora, navegador y mouse; para el fluido, WebGL2 compatible. Para integrar: HTML/CSS/JavaScript y acceso al sitio. Node 18 o superior y Playwright solo se requieren para desarrollo y pruebas.</p>
+<p>El módulo trabaja en el navegador: no incluye analítica, cuentas ni solicitudes de red. Las posiciones del puntero se procesan en memoria; el módulo no usa cookies ni almacenamiento local para guardarlas. Destruir la instancia elimina sus capas y listeners. La demo local funciona sin red. Esto no describe las políticas del sitio que lo integre ni de GitHub al descargar. La firma y las imágenes de marca no son MIT: consulta <a href="docs/ASSET-NOTICE.md">aviso de recursos</a>.</p>
+<h2>Elegir intensidad</h2>
+<table>
+<thead>
+<tr>
+<th>Intensidad</th>
+<th><code>data-jz-level</code> opcional</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nada</code></td>
+<td><code>off</code></td>
+<td>Sin efecto.</td>
+</tr>
+<tr>
+<td><code>poquito</code></td>
+<td><code>subtle</code></td>
+<td>Puntitos de 7 px, vida de 480 ms, sin WebGL.</td>
+</tr>
+<tr>
+<td><code>mucho</code></td>
+<td><code>full</code></td>
+<td>Fluido multicolor, radio de 10 px CSS.</td>
+</tr>
+<tr>
+<td><code>hardcore</code></td>
+<td><code>hard</code></td>
+<td>Fluido multicolor, radio de 18 px CSS.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Comparación animada procedente de la grabación aprobada" src="docs/media/cursor-liquido-demo.gif" /></p>
+<p>Medios reales reutilizados de la demo aprobada, con el mismo motor y adaptador. Capturados mediante entrada de Playwright, 1000 × 850, SwiftShader. La <a href="docs/walkthrough.md">guía del video</a> explica su procedencia y sus límites.</p>
+<h2>Para quien desarrolla el sitio</h2>
+<p>Copia <code>dist/</code> a <code>/vendor/cursor-liquido/</code> y agrega después del contenido de la página:</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/vendor/cursor-liquido/cursor-liquido.css&quot;&gt;
+&lt;script src=&quot;/vendor/cursor-liquido/cursor-liquido.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  LiquidCursor.mount({ intensity: 'poquito' })
+&lt;/script&gt;
+</code></pre>
+<p>Marca bloques con <code>data-liquid-obstacle</code>. Verifica los archivos contra <code>dist/manifest.json</code>. Sin intensidad explícita o atributo de origen, <code>mount()</code> lanza error. La integración con Juice es opcional: <code>LiquidCursor.mount({ followJuice: true })</code> lee <code>data-jz-level</code> sin escribirlo. Una página debe tener un solo dueño del cursor.</p>
+<p><a href="docs/api.md">API</a> · <a href="docs/integrations.md">Integraciones</a> · <a href="docs/accessibility-performance.md">Accesibilidad y rendimiento</a> · <a href="docs/rollback.md">Apagar o volver atrás</a> · <a href="docs/roadmap.md">Planes, no implementados</a> · <a href="docs/quality-input-candidate.es.md">Cambio técnico 1.0.1</a></p>
+<pre><code class="language-sh">npm ci
+npm test
+npm run test:browser
+npm run test:quality
+</code></pre>
+<p>Para reutilizar Playwright instalado, usa <code>PLAYWRIGHT_MODULE=/ruta/absoluta/a/node_modules/playwright</code>. <a href="CONTRIBUTING.md">Contribuir</a> · <a href="skills/cursor-liquido/SKILL.es.md">Instrucciones para agentes</a> · <a href="docs/REPOSITORY-DOCUMENTATION.md">Reglas de documentación</a>. <a href="CHANGELOG.md">CHANGELOG</a> y <a href="RELEASE-NOTES.md">RELEASE-NOTES</a> conservan los registros históricos sin traducir eventos.</p>
+<h2>Ayuda</h2>
+<p>Si falla, elige <code>poquito</code> o <a href="docs/rollback.md">apaga el efecto</a>. Abre un <a href="https://github.com/jorgefsb/cursor-liquido/issues">issue</a> con versión, navegador, sistema y GPU si la conoces, sin información personal. Para instalarlo en una página, comparte la guía técnica con quien mantiene tu sitio.</p></main></html>

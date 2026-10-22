@@ -1,0 +1,525 @@
+{
+  "passed": false,
+  "baseline": "6035bbd24c06b23be353d9af68bd67d33b22f34e",
+  "branch": "docs/brandkit-es-en-20261022",
+  "verification_scope": "Local pre-commit working tree. Final commit ID is reported separately to avoid a self-referential artifact hash.",
+  "faq": {
+    "es": {
+      "count": 6,
+      "questions": [
+        "¿Qué es?",
+        "¿Para quién es?",
+        "¿Por qué se hizo?",
+        "¿Cómo lo uso?",
+        "¿Cuándo conviene usarlo y cuándo no?",
+        "¿Dónde lo pruebo o descargo?"
+      ]
+    },
+    "en": {
+      "count": 6,
+      "questions": [
+        "What is it?",
+        "Who is it for?",
+        "Why was it made?",
+        "How do I use it?",
+        "When should or shouldn't I use it?",
+        "Where can I try or download it?"
+      ]
+    }
+  },
+  "translation_pairs": [
+    {
+      "es": "README.md",
+      "en": "README.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten.",
+      "literal_code_blocks_equal": true
+    },
+    {
+      "es": "CONTRIBUTING.md",
+      "en": "CONTRIBUTING.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/api.md",
+      "en": "docs/api.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten.",
+      "literal_code_blocks_equal": true
+    },
+    {
+      "es": "docs/integrations.md",
+      "en": "docs/integrations.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/accessibility-performance.md",
+      "en": "docs/accessibility-performance.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/rollback.md",
+      "en": "docs/rollback.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/roadmap.md",
+      "en": "docs/roadmap.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/quality-input-candidate.es.md",
+      "en": "docs/quality-input-candidate.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/walkthrough.md",
+      "en": "docs/walkthrough.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/REPOSITORY-DOCUMENTATION.md",
+      "en": "docs/REPOSITORY-DOCUMENTATION.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "docs/ASSET-NOTICE.md",
+      "en": "docs/ASSET-NOTICE.en.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    },
+    {
+      "es": "skills/cursor-liquido/SKILL.es.md",
+      "en": "skills/cursor-liquido/SKILL.md",
+      "mutual_language_links": true,
+      "editorial_review": "Both retain options, requirements, warnings and limitations; historical events are not rewritten."
+    }
+  ],
+  "links": {
+    "checked": 117,
+    "broken": []
+  },
+  "frozen_baseline_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "b334590dde03e674757faa9e905879d1c97fa3d47f85736754f3efe489ff7aea",
+      "byte_identical": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "097b65c4b5c199f5be7a9c1d694e44dfbacc975a3231e91f30a380a3cd43de97",
+      "byte_identical": true
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "c5e6edee8046524abc91a6c98cf7504cd130e2f15c4558da1011eadfff8f4b13",
+      "byte_identical": true
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "f4864217781bc66ed142a648e070f2e83e94d74d4e1079ef22c3ff7fa4c654aa",
+      "byte_identical": true
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "sha256": "ea0891f50f79bae1a2d296da1ed4ed42c4355f3cdfa63bbbda1e61c1d9f312f9",
+      "byte_identical": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES",
+      "sha256": "b15d4228c822d5c6e1519a48f7cb2d3419c886630de1d80ba25956f643b85d5b",
+      "byte_identical": true
+    },
+    {
+      "path": "demo/index.html",
+      "sha256": "eadfbe46351658fb921caca41054f6f82975f428043906aa85f6e6b4529a3588",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/LICENSE",
+      "sha256": "f4864217781bc66ed142a648e070f2e83e94d74d4e1079ef22c3ff7fa4c654aa",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/PAVEL-LICENSE.txt",
+      "sha256": "1be448ae1212de2bee77b4cf851ab0acea0a7f7f32d21cd73095dd94dc173f66",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/THIRD_PARTY_NOTICES",
+      "sha256": "b15d4228c822d5c6e1519a48f7cb2d3419c886630de1d80ba25956f643b85d5b",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/cursor-liquido-standalone.html",
+      "sha256": "74429ef7c10e492275e8f482f9a89dd1c6f05967d2bc082db517229d58bfb134",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/cursor-liquido.css",
+      "sha256": "48ea2645dd676a870fda373edb4b418707814040032ba38655ab20888d4283b3",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/cursor-liquido.js",
+      "sha256": "d1ce69c56780c1a0ed23499e4cd4db3e00f797c0dddab7f54b341b7dbe5802f8",
+      "byte_identical": true
+    },
+    {
+      "path": "dist/manifest.json",
+      "sha256": "ff4b6690d63863e6aba840bcc40e9a67cc6a4eff69419471b31192807cf6d4c0",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/contact-real.png",
+      "sha256": "2d7aae2677ab7b6b4a51a4cdbba07ef336d9d0fa8a098523c91a33e1f53086fc",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/cursor-liquido-demo.gif",
+      "sha256": "7fa429a71b3ea5d951b951e8baeb258b4ecd66b3790e8dc8751835b0ec319628",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/cursor-liquido-restaurado-real.mp4",
+      "sha256": "977365b684bad915075148b688a4b96d8f23fb711736efc7535d70311d7f1bee",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/hardcore-real.png",
+      "sha256": "67264033f4aea2a0b28f7123ad83b79762524ba58c91334a804b4d1cb2ceb685",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/mucho-real.png",
+      "sha256": "fa9c8f6eaed6cfec77fcc3514b4eae9c31a080945c1d9dbaa3c8270147c8f942",
+      "byte_identical": true
+    },
+    {
+      "path": "docs/media/poquito-real.png",
+      "sha256": "d1d5fb8d7ed47efaf8409c9f932234093acf954ba043d60d8b46aeedac2685c1",
+      "byte_identical": true
+    },
+    {
+      "path": "examples/cursor-liquido.html",
+      "sha256": "cccb53b6c3bfe93cb0d39e6542de181e8165ae1a886071cb01a29f9f48f3f914",
+      "byte_identical": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "764ca1bae51c6a9f8b0932349c4151f780da47527250e925fcd1577d3164a057",
+      "byte_identical": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "930585c117e44a8c3e842956a5b3c47336c5f90cfaa7e0a9d2be1ab34ec9fd71",
+      "byte_identical": true
+    },
+    {
+      "path": "scripts/build.cjs",
+      "sha256": "f9c27d6d21d92538704abf8a1c356944dad0c1188bce395cf2af7fad71fb048a",
+      "byte_identical": true
+    },
+    {
+      "path": "src/PAVEL-LICENSE.txt",
+      "sha256": "1be448ae1212de2bee77b4cf851ab0acea0a7f7f32d21cd73095dd94dc173f66",
+      "byte_identical": true
+    },
+    {
+      "path": "src/approved-engine-adapter.js",
+      "sha256": "570bb84eea0856393c106d28a8cc01a18a269ffae31c453d30d88be72372ab2c",
+      "byte_identical": true
+    },
+    {
+      "path": "src/approved-fluid-v3.1.js",
+      "sha256": "3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230",
+      "byte_identical": true
+    },
+    {
+      "path": "src/liquid-cursor.css",
+      "sha256": "48ea2645dd676a870fda373edb4b418707814040032ba38655ab20888d4283b3",
+      "byte_identical": true
+    },
+    {
+      "path": "src/liquid-cursor.js",
+      "sha256": "1ad9cdba9e10be125e4a102aa14b969aedf0b0d7e572386255a9271264bea8d0",
+      "byte_identical": true
+    },
+    {
+      "path": "src/quality-input-guard.js",
+      "sha256": "baeb7ce87fe8d62801331af5b7452657594a3cf40b82cd9255c945fa97e33561",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/browser/quality-transition.cjs",
+      "sha256": "597865afe2f84a642383e91cd2c5c33d99098a706ebe314043c2b396763b2fad",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/browser/regression.cjs",
+      "sha256": "7bfd6847dd7e20f6bf94a0dd61d1516eff245ad854ef727887fde992283d5a7a",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/browser/touch-input.cjs",
+      "sha256": "9c67dbe57f9d88556a8a74efd00818d5bb6cd360693a25159307aa2240629ce9",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/fixtures/standalone.html",
+      "sha256": "6760963246985c85ca1e1fe3ea57c8411fb536f433af1b62be8dda5cb12096ed",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/unit/release.test.cjs",
+      "sha256": "489655be295c1be7552c0a425a54c6a360eee29a04077057604795cc7f17b83e",
+      "byte_identical": true
+    }
+  ],
+  "official_assets": [
+    {
+      "path": "assets/masters-1.0/signature/png/JorgeSuarez-A-oscuro-bicolor-screen-240px-visible.png",
+      "sha256": "560b2a153bb385c17da353de3b4224ac4bb15a4ba8c2fda88c99ad357fa18763",
+      "matches_official_manifest": true
+    },
+    {
+      "path": "assets/Outfit-static.ttf",
+      "sha256": "cad43a79db1b8204a28d8a161d90c938ed80971affbf6768e357f090c7a2ed02",
+      "matches_official_manifest": true
+    },
+    {
+      "path": "assets/Inter-static.ttf",
+      "sha256": "6bd75f77a5941117f794cdb9cf4ee983acf45f2e96be56e74db55029454a988c",
+      "matches_official_manifest": true
+    },
+    {
+      "path": "assets/Outfit-OFL.txt",
+      "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+      "matches_official_manifest": true
+    },
+    {
+      "path": "assets/Inter-OFL.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "matches_official_manifest": true
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/media/contact-real.png",
+      "width": 1000,
+      "height": 850,
+      "frames": 1,
+      "bytes": 101940,
+      "sha256": "2d7aae2677ab7b6b4a51a4cdbba07ef336d9d0fa8a098523c91a33e1f53086fc"
+    },
+    {
+      "path": "docs/media/cover-en-mobile.png",
+      "width": 900,
+      "height": 1420,
+      "frames": 1,
+      "bytes": 198707,
+      "sha256": "198a944408b75a04558fd3de1b98f100689d46a64be799afa3221da5c8f3d992"
+    },
+    {
+      "path": "docs/media/cover-en.png",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "bytes": 167910,
+      "sha256": "6b0977b392b6579b18121a322883b5b58a340e4322ce068e926c3f78f2c36e90"
+    },
+    {
+      "path": "docs/media/cover-es-mobile.png",
+      "width": 900,
+      "height": 1420,
+      "frames": 1,
+      "bytes": 199224,
+      "sha256": "0f1358fc1f57f4428c04bd0d348a303d25193c5728186db49b095048a08563e8"
+    },
+    {
+      "path": "docs/media/cover-es.png",
+      "width": 1600,
+      "height": 900,
+      "frames": 1,
+      "bytes": 168138,
+      "sha256": "1a085c186c7e2463340a5b04043b951f27dfb01987ac9377023525fdd9bf0a12"
+    },
+    {
+      "path": "docs/media/cursor-liquido-demo.gif",
+      "width": 640,
+      "height": 544,
+      "frames": 156,
+      "bytes": 612150,
+      "sha256": "7fa429a71b3ea5d951b951e8baeb258b4ecd66b3790e8dc8751835b0ec319628"
+    },
+    {
+      "path": "docs/media/hardcore-real.png",
+      "width": 1000,
+      "height": 850,
+      "frames": 1,
+      "bytes": 117612,
+      "sha256": "67264033f4aea2a0b28f7123ad83b79762524ba58c91334a804b4d1cb2ceb685"
+    },
+    {
+      "path": "docs/media/mucho-real.png",
+      "width": 1000,
+      "height": 850,
+      "frames": 1,
+      "bytes": 98097,
+      "sha256": "fa9c8f6eaed6cfec77fcc3514b4eae9c31a080945c1d9dbaa3c8270147c8f942"
+    },
+    {
+      "path": "docs/media/poquito-real.png",
+      "width": 1000,
+      "height": 850,
+      "frames": 1,
+      "bytes": 80159,
+      "sha256": "d1d5fb8d7ed47efaf8409c9f932234093acf954ba043d60d8b46aeedac2685c1"
+    }
+  ],
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1000,
+        "height": 850
+      }
+    ],
+    "format": {
+      "duration": "13.040000",
+      "size": "151109"
+    }
+  },
+  "browser_docs": {
+    "passed": true,
+    "checks": 9,
+    "viewports": [
+      "1440x1000",
+      "390x1000"
+    ],
+    "screenshots": [
+      "reports/docs-player-en-desktop.png",
+      "reports/docs-player-en-mobile.png",
+      "reports/docs-player-es-desktop.png",
+      "reports/docs-player-es-mobile.png",
+      "reports/docs-preview-en-desktop.png",
+      "reports/docs-preview-en-mobile.png",
+      "reports/docs-preview-es-desktop.png",
+      "reports/docs-preview-es-mobile.png",
+      "reports/docs-showcase-en-desktop.png",
+      "reports/docs-showcase-en-mobile.png",
+      "reports/docs-showcase-es-desktop.png",
+      "reports/docs-showcase-es-mobile.png"
+    ]
+  },
+  "existing_tests": [
+    {
+      "command": "npm test",
+      "exit_code": 1
+    },
+    {
+      "command": "npm run test:browser",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run test:quality",
+      "exit_code": 0
+    }
+  ],
+  "remote_download_provenance": "Exact v1.0.1 HTML and ZIP release URLs supplied as verified by the repository owner; no remote state changed.",
+  "limitations": [
+    "Headless Chromium and SwiftShader are not physical GPU or phone certification.",
+    "Existing approved MP4 is reused unchanged, not a new 1.0.1 quality-fix recording.",
+    "Preview is a faithful local Markdown render, not a screenshot of published GitHub."
+  ],
+  "initial_issue_resolved": "Relative PLAYWRIGHT_MODULE failed Node resolution; suites reran successfully with an absolute module path.",
+  "changed_paths": [
+    "A  AGENTS.md",
+    "A  CONTRIBUTING.en.md",
+    "M  CONTRIBUTING.md",
+    "A  README.en.md",
+    "M  README.md",
+    "A  docs/ASSET-NOTICE.en.md",
+    "A  docs/ASSET-NOTICE.md",
+    "AM docs/REPOSITORY-DOCUMENTATION.en.md",
+    "AM docs/REPOSITORY-DOCUMENTATION.md",
+    "A  docs/accessibility-performance.en.md",
+    "M  docs/accessibility-performance.md",
+    "A  docs/api.en.md",
+    "M  docs/api.md",
+    "A  docs/design-direction.md",
+    "A  docs/integrations.en.md",
+    "M  docs/integrations.md",
+    "A  docs/media/brand/Inter-OFL.txt",
+    "A  docs/media/brand/Inter-static.ttf",
+    "A  docs/media/brand/Outfit-OFL.txt",
+    "A  docs/media/brand/Outfit-static.ttf",
+    "A  docs/media/cover-en-mobile.png",
+    "A  docs/media/cover-en.png",
+    "A  docs/media/cover-es-mobile.png",
+    "A  docs/media/cover-es.png",
+    "A  docs/media/walkthrough.en.vtt",
+    "A  docs/media/walkthrough.es.vtt",
+    "A  docs/preview.en.html",
+    "A  docs/preview.es.html",
+    "A  docs/quality-input-candidate.es.md",
+    "M  docs/quality-input-candidate.md",
+    "A  docs/reading.css",
+    "A  docs/roadmap.en.md",
+    "M  docs/roadmap.md",
+    "A  docs/rollback.en.md",
+    "M  docs/rollback.md",
+    "A  docs/showcase.en.html",
+    "A  docs/showcase.html",
+    "A  docs/walkthrough.en.md",
+    "A  docs/walkthrough.md",
+    "MM reports/browser-test-report.json",
+    "AM reports/docs-brand-source-hashes.json",
+    "A  reports/docs-brandkit-verification.json",
+    "A  reports/docs-browser-verification.json",
+    "AM reports/docs-existing-tests.json",
+    "A  reports/docs-player-en-desktop.png",
+    "A  reports/docs-player-en-mobile.png",
+    "A  reports/docs-player-es-desktop.png",
+    "A  reports/docs-player-es-mobile.png",
+    "A  reports/docs-preview-en-desktop.png",
+    "A  reports/docs-preview-en-mobile.png",
+    "A  reports/docs-preview-es-desktop.png",
+    "A  reports/docs-preview-es-mobile.png",
+    "A  reports/docs-recording-overview.jpg",
+    "A  reports/docs-showcase-en-desktop.png",
+    "A  reports/docs-showcase-en-mobile.png",
+    "A  reports/docs-showcase-es-desktop.png",
+    "A  reports/docs-showcase-es-mobile.png",
+    "A  scripts/docs-browser.cjs",
+    "AM scripts/docs-render.py",
+    "A  scripts/docs-verify.py",
+    "A  skills/cursor-liquido/SKILL.es.md",
+    "M  skills/cursor-liquido/SKILL.md",
+    "?? .gitattributes"
+  ],
+  "documentation_checks_passed": true,
+  "known_unit_blockers": [
+    {
+      "test": "build is deterministic and dist/ matches a fresh build",
+      "cause": "Existing build includes every docs/media file in dist/manifest.json. New editorial covers, captions and OFL fonts make that frozen manifest stale. The in-memory build comparison changes only dist/manifest.json, not JS, CSS or standalone HTML.",
+      "resolution_requires_separate_approval": "Refresh release packaging manifest or change packaging policy outside this docs-only scope. No dist or assertion was modified."
+    },
+    {
+      "test": "public files carry no private paths, hosts, emails or credentials",
+      "cause": "Existing assertion classifies the required official public brandkit domain as a private link. The family brief requires that exact public reference. It was not hidden, encoded or removed to bypass the assertion.",
+      "resolution_requires_separate_approval": "Review the obsolete URL denylist in a separate test change. Tests remain byte-identical."
+    }
+  ],
+  "execution_output_notice": "Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy."
+}

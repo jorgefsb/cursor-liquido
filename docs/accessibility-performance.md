@@ -1,6 +1,8 @@
 # Accesibilidad y rendimiento
 
-Lo que hace el código de la versión 1.0.0, y lo que no se promete.
+Español · [English](accessibility-performance.en.md)
+
+Lo que hace el código de la versión 1.0.1, y lo que no se promete.
 
 ## Accesibilidad
 

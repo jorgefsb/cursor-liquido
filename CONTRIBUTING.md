@@ -1,12 +1,14 @@
 # Contribuir
 
+Español · [English](CONTRIBUTING.en.md)
+
 Gracias por ayudar. Unas reglas cortas, porque este paquete ya tuvo una regresión visual por "mejorar" el renderer.
 
 ## El motor no se toca
 
 `src/approved-fluid-v3.1.js` es el renderer aprobado. Su sha256 está fijo en `scripts/build.cjs` y en las pruebas. Ningún PR cambia ese archivo, sus shaders ni su formato. Si algo requiere cambiar el motor, abre primero un issue: sería un motor nuevo, con su propio hash y su propia aprobación visual.
 
-`src/approved-engine-adapter.js` y `src/liquid-cursor.js` sí pueden cambiar, en una versión nueva, con pruebas y una entrada en el CHANGELOG.
+En este trabajo de documentación, `src/approved-engine-adapter.js` también está congelado. Cualquier cambio futuro de código necesita aprobación separada, pruebas y una entrada en el CHANGELOG. La documentación no modifica runtime ni pruebas.
 
 ## Preparar
 
@@ -23,6 +25,7 @@ Sin red, puedes reutilizar un Playwright instalado: `PLAYWRIGHT_MODULE=/ruta/a/n
 npm run build          # regenera dist/ y dist/manifest.json
 npm test               # hash, determinismo, manifest, sintaxis, privacidad
 npm run test:browser   # navegador real sobre dist/
+npm run test:quality   # transiciones de calidad A-B-B-A
 ```
 
 Sube `dist/` regenerado junto con el cambio. `npm test` falla si `dist/` no coincide con un build nuevo.
@@ -37,4 +40,4 @@ Rutas absolutas de tu máquina, correos, nombres de hosts internos, credenciales
 
 ## Estilo
 
-Código y comentarios como el código vecino. Documentación en español con un resumen en inglés cuando sea de uso. Commits con el formato `tipo: descripción` (`feat`, `fix`, `docs`, `test`, `build`, `refactor`).
+Código y comentarios como el código vecino. Documentación actual equivalente en español e inglés con enlaces mutuos, según [reglas de documentación](docs/REPOSITORY-DOCUMENTATION.md). Commits con el formato `tipo: descripción` (`feat`, `fix`, `docs`, `test`, `build`, `refactor`).

@@ -1,5 +1,7 @@
 # Rollback
 
+Español · [English](rollback.en.md)
+
 ## Apagar ya, sin desplegar
 
 En la consola del navegador o desde tu propio código:

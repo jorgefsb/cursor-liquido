@@ -8,6 +8,8 @@ author: Jorge Suárez
 
 # Cursor líquido
 
+English · [Español](SKILL.es.md)
+
 Portable instructions for any coding agent (Claude, Codex, ChatGPT or similar). They assume only a shell, a browser for testing and this repository. Intended source: `https://github.com/jorgefsb/cursor-liquido` (not yet confirmed as published, so prefer the checked-out copy).
 
 ## What it is
@@ -21,12 +23,12 @@ A pointer trail that sits behind the native cursor. Four intensities:
 | `mucho` | `full` | multicolour WebGL2 fluid, 10 CSS px |
 | `hardcore` | `hard` | multicolour WebGL2 fluid, 18 CSS px |
 
-There is no fifth level. "Legendario" is only a proposal in `docs/roadmap.md`. Do not implement or advertise it.
+There is no fifth level. "Legendario" is only a proposal in [roadmap](../../docs/roadmap.en.md). Do not implement or advertise it.
 
 ## Before you change a page
 
 1. Read the page's existing styles and scripts. Find any existing cursor trail. Keep one cursor owner: disable the old trail through its own documented switch, or stop and ask. Never patch a published vendor file to hide a duplicate.
-2. Read `docs/api.md` for the exact options. Do not invent options. The accepted ones are `intensity`, `followJuice`, `touch`, `color`, `obstacleSelector` and `container`.
+2. Read [API](../../docs/api.en.md) for the exact options. Do not invent options. The accepted ones are `intensity`, `followJuice`, `touch`, `color`, `obstacleSelector` and `container`.
 3. Decide the intensity with the page owner. Without a visible Juega control, set it in code (`intensity`) or in `<html data-liquid-intensity>`. Never show a `prompt()` or force the visitor to choose.
 
 ## Integrate
@@ -48,6 +50,7 @@ There is no fifth level. "Legendario" is only a proposal in `docs/roadmap.md`. D
 ## Never
 
 - Edit `src/approved-fluid-v3.1.js` or its shaders. Its sha256 must stay `3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230`.
+- Change the approved adapter or any runtime bytes during documentation work.
 - Rewrite the renderer to make a test pass. If the output is wrong, stop and report with evidence.
 - Hide the native pointer, capture clicks or block scrolling.
 - Promise identical rendering on every GPU, browser or phone.
@@ -55,7 +58,7 @@ There is no fifth level. "Legendario" is only a proposal in `docs/roadmap.md`. D
 
 ## Verify
 
-Run `npm test` and `npm run test:browser` in this repository. On the target page, check:
+Run `npm test`, `npm run test:browser` and `npm run test:quality` in this repository. On the target page, check:
 
 - every intensity you expose, plus reduced motion at load and after toggling it,
 - keyboard focus, typing in fields, clicks and links,
@@ -67,7 +70,7 @@ Browser emulation is not a physical-device test. Report what you actually ran.
 
 ## Deliver
 
-When asked to "download and try", deliver an offline HTML first. Integrating into a production page, publishing or changing a site are separate steps that need their own approval. Record the package version, the bundle sha256 and how to roll back (`docs/rollback.md`).
+When asked to "download and try", deliver an offline HTML first. Integrating into a production page, publishing or changing a site are separate steps that need their own approval. Record the package version, the bundle sha256 and how to roll back ([rollback](../../docs/rollback.en.md)).
 
 ## Sibling skills
 

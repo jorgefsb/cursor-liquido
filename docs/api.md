@@ -1,4 +1,6 @@
-# API · Cursor líquido 1.0.0
+# API · Cursor líquido 1.0.1
+
+Español · [English](api.en.md) · [Inicio](../README.md)
 
 Todo lo de esta página sale del código en `src/`. Si algo no aparece aquí, el paquete no lo hace.
 
@@ -8,7 +10,8 @@ Todo lo de esta página sale del código en `src/`. Si algo no aparece aquí, el
 
 1. `src/approved-fluid-v3.1.js`: el motor de fluido aprobado (`window.FluidCursor`). Su sha256 es `3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230` y no se modifica.
 2. `src/approved-engine-adapter.js`: adaptador de radio y ciclo de vida (`window.FluidEngine`).
-3. `src/liquid-cursor.js`: la API pública (`window.LiquidCursor`).
+3. `src/quality-input-guard.js`: subclase externa que conserva entrada real en cola durante el primer cambio de calidad, ver [nota técnica](quality-input-candidate.es.md).
+4. `src/liquid-cursor.js`: la API pública (`window.LiquidCursor`).
 
 `dist/cursor-liquido.css` define las capas. Sin el CSS el efecto sigue funcionando (las capas llevan estilos inline de seguridad), pero pierdes `--liquid-cursor-z`, el modo `screen` del fluido y el apagado por CSS con movimiento reducido.
 
@@ -88,7 +91,7 @@ El fluido no emite cuando el puntero está sobre `a, button, input, select, text
 
 | Miembro | Qué es |
 |---|---|
-| `version` | `'1.0.0'` |
+| `version` | `'1.0.1'` |
 | `intensities` | Tabla congelada `{ nada, poquito, mucho, hardcore }` con `layer` y `radius`. |
 | `juiceLevels` | `{ off: 'nada', subtle: 'poquito', full: 'mucho', hard: 'hardcore' }` |
 | `normalize(value)` | Nombre canónico o `null`. |
