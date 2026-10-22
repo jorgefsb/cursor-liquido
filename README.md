@@ -9,7 +9,7 @@
 
 Una estela de color que sigue el puntero de tu página. Hecho por [Jorge Suárez](https://brandkit.jorgesuarez.com.mx/).
 
-[Descargar demo HTML 1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) · [Ver demostración explicada](docs/showcase.html)
+[Descargar demo HTML 1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) · [Ver video real (MP4, 13 s)](docs/media/cursor-liquido-restaurado-real.mp4)
 
 ## ¿Qué es?
 
@@ -33,7 +33,9 @@ Para compartir un solo archivo sin red, abre [dist/cursor-liquido-standalone.htm
 
 Captura real: Hardcore está seleccionado; el fluido aparece junto al bloque naranja y el panel claro queda libre de luz. Es una muestra, no una certificación de dispositivos.
 
-[Ver el video real (13 s)](docs/media/cursor-liquido-restaurado-real.mp4) · [Subtítulos ES](docs/media/walkthrough.es.vtt) · [Explicación por momentos](docs/walkthrough.md) · [Reproductor local con subtítulos](docs/showcase.html)
+[Ver el video real (13 s)](docs/media/cursor-liquido-restaurado-real.mp4) · [Subtítulos ES](docs/media/walkthrough.es.vtt) · [Explicación por momentos](docs/walkthrough.md) · [Reproductor con subtítulos para abrir localmente](docs/showcase.html)
+
+Para usar el reproductor, descarga o clona el repositorio y abre `docs/showcase.html` en tu navegador. GitHub muestra su código, no un reproductor HTML alojado.
 
 ## ¿Cuándo conviene usarlo y cuándo no?
 
@@ -43,7 +45,7 @@ Probado con Chromium headless y WebGL por software (SwiftShader), no en teléfon
 
 ## ¿Dónde lo pruebo o descargo?
 
-En esta copia local: [demo](demo/index.html) o [archivo autónomo](dist/cursor-liquido-standalone.html). La fuente es [jorgefsb/cursor-liquido](https://github.com/jorgefsb/cursor-liquido). Puedes descargar el [HTML autónomo de Release v1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) o el [ZIP cursor-liquido-1.0.1.zip](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido-1.0.1.zip). Son enlaces de descarga de la release existente, verificados por el responsable del repositorio; no una nueva publicación de este trabajo. No se ha verificado aquí una demo pública alojada. No hay paquete npm publicado: no uses `npm install cursor-liquido`. Este cambio de documentación es local y no publica nada.
+En esta copia local: [demo](demo/index.html) o [archivo autónomo](dist/cursor-liquido-standalone.html). La fuente es [jorgefsb/cursor-liquido](https://github.com/jorgefsb/cursor-liquido). Puedes descargar el [HTML autónomo de Release v1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido.html) o el [ZIP cursor-liquido-1.0.1.zip](https://github.com/jorgefsb/cursor-liquido/releases/download/v1.0.1/cursor-liquido-1.0.1.zip). Son enlaces de descarga de la release existente, verificados por el responsable del repositorio; no una nueva publicación de este trabajo. No se ha verificado aquí una demo pública alojada. No hay paquete npm publicado: no uses `npm install cursor-liquido`. Esta revisión actualiza documentación; no cambia el runtime ni crea una nueva release.
 
 ## Costo, requisitos y privacidad
 

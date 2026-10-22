@@ -126,16 +126,90 @@ test('candidate has exactly four intensities (Legendario is only a proposal)', (
   assert(!/legendario/i.test(src));
 });
 
-test('public files carry no private paths, hosts, emails or credentials', () => {
-  // Patterns are assembled so this file does not match itself.
+// Patterns and fixtures are assembled so this file does not match itself.
+const PUBLIC_BRAND_HOST = ['brandkit', 'jorgesuarez', 'com', 'mx'].join('.');
+const PRIVATE_LINK = 'brandkit' + '.jorge';
+function privacyFindings(s) {
   const bad = [
     ['/' + 'home/', 'absolute home path'], ['/' + 'Users/', 'absolute home path'], ['mo' + 'lt', 'host user'],
     ['srv' + '-', 'internal host'], ['tail' + 'scale', 'internal network'], ['.ts' + '.net', 'internal network'],
-    ['gbr' + 'ain', 'private brain'], ['Mo' + 'ona', 'fleet note'], ['brandkit' + '.jorge', 'private link'],
+    ['gbr' + 'ain', 'private brain'], ['Mo' + 'ona', 'fleet note'],
     ['_n' + 'px/', 'local cache path'], ['upload' + '_2026', 'private screenshot']
   ];
   const email = /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/;
   const secret = /(api[_-]?key|secret|token|password)\s*[:=]\s*['"][^'"]{8,}/i;
+  const hits = bad.filter(([p]) => s.includes(p)).map(([, why]) => why);
+  // Exempt only the hostname span in a parsed, exact HTTPS authority.
+  // Never remove the URL: its path/query and all neighboring text stay scanned.
+  const allowed = [];
+  for (const m of s.matchAll(/[a-z][a-z\d+.-]*:\/\/[^\s<>"'`()\[\]{}]+/gi)) {
+    try {
+      const u = new URL(m[0]);
+      const prefix = 'https://' + PUBLIC_BRAND_HOST;
+      if (u.protocol === 'https:' && u.hostname === PUBLIC_BRAND_HOST &&
+          !u.username && !u.password && !u.port && m[0].startsWith(prefix) &&
+          (m[0].length === prefix.length || '/?#'.includes(m[0][prefix.length]))) {
+        allowed.push([m.index + 'https://'.length, m.index + prefix.length]);
+      }
+    } catch { /* Malformed URLs receive no exemption. */ }
+  }
+  let pos = s.indexOf(PRIVATE_LINK);
+  while (pos !== -1) {
+    if (!allowed.some(([start, end]) => pos >= start && pos + PRIVATE_LINK.length <= end)) {
+      hits.push('private link');
+      break;
+    }
+    pos = s.indexOf(PRIVATE_LINK, pos + PRIVATE_LINK.length);
+  }
+  if (email.test(s)) hits.push('email ' + s.match(email)[0]);
+  if (secret.test(s)) hits.push('credential-like value');
+  return hits;
+}
+
+test('privacy scanner accepts only the official public HTTPS hostname', () => {
+  const url = 'https://' + PUBLIC_BRAND_HOST;
+  for (const s of [url, url + '/', '[' + 'brand](' + url + '/guide)',
+    '<a href="' + url + '/guide?q=public#assets">brand</a>']) {
+    assert.deepEqual(privacyFindings(s), [], s);
+  }
+});
+
+test('privacy scanner rejects hostname and authority mutations', () => {
+  const url = 'https://' + PUBLIC_BRAND_HOST;
+  for (const s of [PUBLIC_BRAND_HOST, 'http://' + PUBLIC_BRAND_HOST,
+    '//' + PUBLIC_BRAND_HOST, url + '.evil', url + '-evil', url + ':444/',
+    url + ':443/', url + './', 'https://user@' + PUBLIC_BRAND_HOST,
+    'https://user:pass@' + PUBLIC_BRAND_HOST, url + '@example.org',
+    'https://example.org/' + PUBLIC_BRAND_HOST,
+    'https://' + PRIVATE_LINK + '.internal', 'https://%' + PUBLIC_BRAND_HOST]) {
+    assert(privacyFindings(s).includes('private link'), s);
+  }
+});
+
+test('public link never hides adjacent or embedded private data', () => {
+  const url = 'https://' + PUBLIC_BRAND_HOST;
+  const fixtures = [
+    ['/' + 'home/person', 'absolute home path'], ['/' + 'Users/person', 'absolute home path'],
+    ['mo' + 'lt', 'host user'], ['srv' + '-private', 'internal host'],
+    ['tail' + 'scale', 'internal network'], ['node.ts' + '.net', 'internal network'],
+    ['gbr' + 'ain', 'private brain'], ['Mo' + 'ona', 'fleet note'],
+    [PRIVATE_LINK + '.internal', 'private link'], ['_n' + 'px/cache', 'local cache path'],
+    ['upload' + '_2026', 'private screenshot'], ['person' + '@example.org', 'email '],
+    ['api_' + 'key="abcdefghijk"', 'credential-like value'],
+    ['pass' + 'word="abcdefghijk"', 'credential-like value'],
+    ['to' + 'ken="abcdefghijk"', 'credential-like value'],
+    ['sec' + 'ret="abcdefghijk"', 'credential-like value']
+  ];
+  for (const [value, why] of fixtures) {
+    for (const s of [url + ' ' + value, value + ' ' + url, url + '/' + value,
+      url + '?value=' + value, url + '#' + value]) {
+      assert(privacyFindings(s).some(hit => hit.startsWith(why)), why);
+    }
+  }
+  assert(privacyFindings(url + ' ' + url + '.evil').includes('private link'));
+});
+
+test('public files carry no private paths, hosts, emails or credentials', () => {
   const skip = new Set(['node_modules', '.git', 'test-output']);
   const walk = rel => fs.readdirSync(path.join(ROOT, rel), { withFileTypes: true }).flatMap(d =>
     skip.has(d.name) ? [] : d.isDirectory() ? walk(path.join(rel, d.name)) : [path.join(rel, d.name)]);
@@ -144,9 +218,7 @@ test('public files carry no private paths, hosts, emails or credentials', () => 
   const hits = [];
   for (const f of text) {
     const s = read(f).toString();
-    for (const [p, why] of bad) if (s.includes(p)) hits.push(f + ': ' + why);
-    if (email.test(s)) hits.push(f + ': email ' + s.match(email)[0]);
-    if (secret.test(s)) hits.push(f + ': credential-like value');
+    hits.push(...privacyFindings(s).map(why => f + ': ' + why));
   }
   assert.deepEqual(hits, []);
 });

@@ -49,9 +49,41 @@
       "sha256": "d1ce69c56780c1a0ed23499e4cd4db3e00f797c0dddab7f54b341b7dbe5802f8",
       "bytes": 42666
     },
+    "docs/media/brand/Inter-OFL.txt": {
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    "docs/media/brand/Inter-static.ttf": {
+      "sha256": "6bd75f77a5941117f794cdb9cf4ee983acf45f2e96be56e74db55029454a988c",
+      "bytes": 341396
+    },
+    "docs/media/brand/Outfit-OFL.txt": {
+      "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416",
+      "bytes": 4389
+    },
+    "docs/media/brand/Outfit-static.ttf": {
+      "sha256": "cad43a79db1b8204a28d8a161d90c938ed80971affbf6768e357f090c7a2ed02",
+      "bytes": 55304
+    },
     "docs/media/contact-real.png": {
       "sha256": "2d7aae2677ab7b6b4a51a4cdbba07ef336d9d0fa8a098523c91a33e1f53086fc",
       "bytes": 101940
+    },
+    "docs/media/cover-en-mobile.png": {
+      "sha256": "198a944408b75a04558fd3de1b98f100689d46a64be799afa3221da5c8f3d992",
+      "bytes": 198707
+    },
+    "docs/media/cover-en.png": {
+      "sha256": "6b0977b392b6579b18121a322883b5b58a340e4322ce068e926c3f78f2c36e90",
+      "bytes": 167910
+    },
+    "docs/media/cover-es-mobile.png": {
+      "sha256": "0f1358fc1f57f4428c04bd0d348a303d25193c5728186db49b095048a08563e8",
+      "bytes": 199224
+    },
+    "docs/media/cover-es.png": {
+      "sha256": "1a085c186c7e2463340a5b04043b951f27dfb01987ac9377023525fdd9bf0a12",
+      "bytes": 168138
     },
     "docs/media/cursor-liquido-demo.gif": {
       "sha256": "7fa429a71b3ea5d951b951e8baeb258b4ecd66b3790e8dc8751835b0ec319628",
@@ -72,6 +104,14 @@
     "docs/media/poquito-real.png": {
       "sha256": "d1d5fb8d7ed47efaf8409c9f932234093acf954ba043d60d8b46aeedac2685c1",
       "bytes": 80159
+    },
+    "docs/media/walkthrough.en.vtt": {
+      "sha256": "65effafec647904b7360f303ab9c3647926e6d2e5ffd6fe7df5604b9496e0ddc",
+      "bytes": 350
+    },
+    "docs/media/walkthrough.es.vtt": {
+      "sha256": "53e025eac25dcceecf805b139295341a30a22667d8b167a93110a56b1a0d52a4",
+      "bytes": 361
     },
     "examples/cursor-liquido.html": {
       "sha256": "cccb53b6c3bfe93cb0d39e6542de181e8165ae1a886071cb01a29f9f48f3f914",

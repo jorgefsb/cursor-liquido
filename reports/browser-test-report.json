@@ -72,11 +72,11 @@
         ],
         "colours": [
           "rgb(34, 33, 31)",
-          "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(34, 33, 31)",
           "rgb(244, 232, 213)",
-          "rgb(34, 33, 31)"
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)"
         ],
         "webgl": false
       }
@@ -89,9 +89,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 17095,
-          "chromatic": 16989,
-          "neutral": 5,
+          "active": 16931,
+          "chromatic": 16830,
+          "neutral": 2,
           "pixels": 1140000,
           "error": 0
         }
@@ -110,10 +110,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 25619,
-          "brightNeutral": 16943,
-          "chromaticRatio": 0.07319714285714286,
-          "neutralRatio": 0.048408571428571426
+          "chromatic": 26861,
+          "brightNeutral": 16924,
+          "chromaticRatio": 0.07674571428571429,
+          "neutralRatio": 0.04835428571428572
         }
       }
     },
@@ -122,12 +122,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.33984375,
+        "peak": 1.6787109375,
         "last": {
           "frame": 90,
-          "active": 49275,
-          "chromatic": 49262,
-          "neutral": 2,
+          "active": 49293,
+          "chromatic": 48337,
+          "neutral": 151,
           "pixels": 1140000,
           "error": 0
         }
@@ -146,10 +146,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 35957,
-          "brightNeutral": 17003,
-          "chromaticRatio": 0.10273428571428571,
-          "neutralRatio": 0.04858
+          "chromatic": 45613,
+          "brightNeutral": 16952,
+          "chromaticRatio": 0.13032285714285713,
+          "neutralRatio": 0.048434285714285714
         }
       }
     },
@@ -256,12 +256,12 @@
           "translate(-50%, -50%) translateY(14px) scale(0.2)"
         ],
         "colours": [
-          "rgb(255, 107, 53)",
+          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)",
+          "rgb(34, 33, 31)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)",
-          "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)"
+          "rgb(34, 33, 31)"
         ],
         "webgl": false
       }
@@ -274,9 +274,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 17981,
-          "chromatic": 17919,
-          "neutral": 1,
+          "active": 17224,
+          "chromatic": 16923,
+          "neutral": 52,
           "pixels": 1140000,
           "error": 0
         }
@@ -295,10 +295,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 27052,
-          "brightNeutral": 16943,
-          "chromaticRatio": 0.07729142857142857,
-          "neutralRatio": 0.048408571428571426
+          "chromatic": 25895,
+          "brightNeutral": 16956,
+          "chromaticRatio": 0.07398571428571428,
+          "neutralRatio": 0.048445714285714286
         }
       }
     },
@@ -307,12 +307,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.333984375,
+        "peak": 1.416015625,
         "last": {
           "frame": 90,
-          "active": 48333,
-          "chromatic": 47838,
-          "neutral": 45,
+          "active": 49386,
+          "chromatic": 49232,
+          "neutral": 19,
           "pixels": 1140000,
           "error": 0
         }
@@ -331,10 +331,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 40663,
-          "brightNeutral": 16950,
-          "chromaticRatio": 0.11618,
-          "neutralRatio": 0.04842857142857143
+          "chromatic": 47230,
+          "brightNeutral": 16897,
+          "chromaticRatio": 0.13494285714285714,
+          "neutralRatio": 0.04827714285714286
         }
       }
     },
@@ -483,9 +483,9 @@
         "defaultWalls": 1,
         "bothWalls": 2,
         "dotColours": [
-          "rgb(244, 232, 213)",
           "rgb(0, 170, 255)",
-          "rgb(34, 33, 31)"
+          "rgb(34, 33, 31)",
+          "rgb(244, 232, 213)"
         ]
       }
     },
@@ -509,10 +509,35 @@
           },
           "pending": null,
           "raf": 0,
-          "capturedAt": 424.70000000298023,
+          "capturedAt": 424,
           "layerPointerEvents": "none"
         },
         "queued": {
+          "dots": 6,
+          "splats": 0,
+          "stats": {
+            "state": "running",
+            "frames": 2,
+            "splats": 0,
+            "impacts": 0,
+            "wallCount": 1,
+            "error": null,
+            "quality": "economy",
+            "play": "full",
+            "radius": 18,
+            "maskUploads": 2
+          },
+          "pending": {
+            "x": 175,
+            "y": 440,
+            "dx": 75,
+            "dy": 0
+          },
+          "raf": 4,
+          "capturedAt": 929.3999999985099,
+          "layerPointerEvents": "none"
+        },
+        "on": {
           "dots": 6,
           "splats": 1,
           "stats": {
@@ -527,34 +552,9 @@
             "radius": 18,
             "maskUploads": 2
           },
-          "pending": {
-            "x": 175,
-            "y": 440,
-            "dx": 15,
-            "dy": 0
-          },
-          "raf": 6,
-          "capturedAt": 870.4000000059605,
-          "layerPointerEvents": "none"
-        },
-        "on": {
-          "dots": 6,
-          "splats": 2,
-          "stats": {
-            "state": "running",
-            "frames": 4,
-            "splats": 2,
-            "impacts": 0,
-            "wallCount": 1,
-            "error": null,
-            "quality": "economy",
-            "play": "full",
-            "radius": 18,
-            "maskUploads": 2
-          },
           "pending": null,
-          "raf": 8,
-          "capturedAt": 902.8000000044703,
+          "raf": 5,
+          "capturedAt": 965.3999999985099,
           "layerPointerEvents": "none"
         }
       }
@@ -738,9 +738,9 @@
         "version": "0.1.1-recovery",
         "last": {
           "frame": 90,
-          "active": 49779,
-          "chromatic": 49227,
-          "neutral": 51,
+          "active": 48694,
+          "chromatic": 48603,
+          "neutral": 24,
           "pixels": 1140000,
           "error": 0
         }
@@ -750,33 +750,33 @@
   "screenshots": [
     {
       "file": "test-output/dist-file-mucho.png",
-      "sha256": "98a4d13769b9cf0647928ad19ec8ed630fd56da02f1678dd30fc810640299a5d",
-      "bytes": 115515
+      "sha256": "b5eb96b512a502e4671fd1c4483c1f82c410f85de36fdecab9269551331618a3",
+      "bytes": 111967
     },
     {
       "file": "test-output/dist-file-hardcore.png",
-      "sha256": "69453e4876f16d9ce87d9f8462a001565e7efde9ef8a189b8d5e390e365a3259",
-      "bytes": 147925
+      "sha256": "e3206efa100e287135c353dcc612ff748a8e40b8676e59c5854696f9f80b3591",
+      "bytes": 144511
     },
     {
       "file": "test-output/dist-file-contact.png",
-      "sha256": "fd19c8868a63d754e45b453ac7b0d315bc59119bb994aeb08223b675a733118d",
-      "bytes": 93831
+      "sha256": "61e248af4ccbc20630aa87433630ca4b07a0e1a13a36ad168bc6419256d7d5a8",
+      "bytes": 93403
     },
     {
       "file": "test-output/dist-http-mucho.png",
-      "sha256": "9160dcc5cba2729eb04ae82b379739c4948ed1c6ddff94712fa2104d48e0d8a2",
-      "bytes": 115725
+      "sha256": "c25b20417f330aad00b8e580b0733a68538d9c4d5058db57618096de27793f8d",
+      "bytes": 115087
     },
     {
       "file": "test-output/dist-http-hardcore.png",
-      "sha256": "e517da9fc7a384e3a07eaf92ee6e49a5d7b71e14bab56ccb8778cdf68e9e22e0",
-      "bytes": 150614
+      "sha256": "5b823ab416d2327b06cad06cc56661c485f1c1e4af5affe895fd99df3a3a8966",
+      "bytes": 143560
     },
     {
       "file": "test-output/dist-http-contact.png",
-      "sha256": "1a2db0f72614a63b757858015c9dffe729f2604a168975277eb14f85bda76a81",
-      "bytes": 94354
+      "sha256": "e0071c933058bf812e3a7f6b6b9ac08e8e9efb2e2a574b7f664529b2bb9d4461",
+      "bytes": 94632
     }
   ]
 }

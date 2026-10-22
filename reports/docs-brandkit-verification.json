@@ -1,8 +1,8 @@
 {
-  "passed": false,
+  "passed": true,
   "baseline": "6035bbd24c06b23be353d9af68bd67d33b22f34e",
   "branch": "docs/brandkit-es-en-20261022",
-  "verification_scope": "Local pre-commit working tree. Final commit ID is reported separately to avoid a self-referential artifact hash.",
+  "verification_scope": "Local pre-commit verification after documentary fixes; earlier failing run retained as history. No remote writes.",
   "faq": {
     "es": {
       "count": 6,
@@ -174,11 +174,6 @@
       "byte_identical": true
     },
     {
-      "path": "dist/manifest.json",
-      "sha256": "ff4b6690d63863e6aba840bcc40e9a67cc6a4eff69419471b31192807cf6d4c0",
-      "byte_identical": true
-    },
-    {
       "path": "docs/media/contact-real.png",
       "sha256": "2d7aae2677ab7b6b4a51a4cdbba07ef336d9d0fa8a098523c91a33e1f53086fc",
       "byte_identical": true
@@ -276,11 +271,6 @@
     {
       "path": "tests/fixtures/standalone.html",
       "sha256": "6760963246985c85ca1e1fe3ea57c8411fb536f433af1b62be8dda5cb12096ed",
-      "byte_identical": true
-    },
-    {
-      "path": "tests/unit/release.test.cjs",
-      "sha256": "489655be295c1be7552c0a425a54c6a360eee29a04077057604795cc7f17b83e",
       "byte_identical": true
     }
   ],
@@ -425,7 +415,11 @@
   "existing_tests": [
     {
       "command": "npm test",
-      "exit_code": 1
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/build.cjs --check",
+      "exit_code": 0
     },
     {
       "command": "npm run test:browser",
@@ -443,7 +437,84 @@
     "Preview is a faithful local Markdown render, not a screenshot of published GitHub."
   ],
   "initial_issue_resolved": "Relative PLAYWRIGHT_MODULE failed Node resolution; suites reran successfully with an absolute module path.",
-  "changed_paths": [
+  "documentation_checks_passed": true,
+  "execution_output_notice": "Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy.",
+  "previous_known_unit_blockers": [
+    {
+      "test": "build is deterministic and dist/ matches a fresh build",
+      "cause": "Existing build includes every docs/media file in dist/manifest.json. New editorial covers, captions and OFL fonts make that frozen manifest stale. The in-memory build comparison changes only dist/manifest.json, not JS, CSS or standalone HTML.",
+      "resolution_requires_separate_approval": "Refresh release packaging manifest or change packaging policy outside this docs-only scope. No dist or assertion was modified."
+    },
+    {
+      "test": "public files carry no private paths, hosts, emails or credentials",
+      "cause": "Existing assertion classifies the required official public brandkit domain as a private link. The family brief requires that exact public reference. It was not hidden, encoded or removed to bypass the assertion.",
+      "resolution_requires_separate_approval": "Review the obsolete URL denylist in a separate test change. Tests remain byte-identical."
+    }
+  ],
+  "known_unit_blockers": [],
+  "previous_existing_tests": [
+    {
+      "command": "npm test",
+      "exit_code": 1
+    },
+    {
+      "command": "npm run test:browser",
+      "exit_code": 0
+    },
+    {
+      "command": "npm run test:quality",
+      "exit_code": 0
+    }
+  ],
+  "documentary_fix": {
+    "base_commit": "42731d172c78881ff2d84bb2c72546671d6ca41e",
+    "previous_unit_result": {
+      "passed": 11,
+      "failed": 2,
+      "total": 13
+    },
+    "current_unit_result": {
+      "passed": 16,
+      "failed": 0,
+      "total": 16
+    },
+    "metadata_change": "Regenerated dist/manifest.json with the unchanged original build to include documentary media. Manifest and privacy test are intentionally updated, not frozen.",
+    "privacy_change": "Exact public HTTPS hostname authority parsed with URL; only its hostname span is exempt. Original private patterns, email and secret checks still inspect all text, including URL paths, queries, fragments, docs and reports. Three additional tests cover accepted links, authority mutations and neighboring or embedded private data.",
+    "runtime_byte_proof": [
+      {
+        "path": "dist/cursor-liquido.js",
+        "bytes": 42666,
+        "sha256": "d1ce69c56780c1a0ed23499e4cd4db3e00f797c0dddab7f54b341b7dbe5802f8",
+        "byte_identical": true
+      },
+      {
+        "path": "dist/cursor-liquido.css",
+        "bytes": 480,
+        "sha256": "48ea2645dd676a870fda373edb4b418707814040032ba38655ab20888d4283b3",
+        "byte_identical": true
+      },
+      {
+        "path": "dist/cursor-liquido-standalone.html",
+        "bytes": 52236,
+        "sha256": "74429ef7c10e492275e8f482f9a89dd1c6f05967d2bc082db517229d58bfb134",
+        "byte_identical": true
+      }
+    ],
+    "browser": {
+      "passed": 42,
+      "failed": 0
+    },
+    "quality": {
+      "passed": 8,
+      "failed": 0
+    },
+    "docs_browser": {
+      "passed": true,
+      "checks": 9
+    },
+    "readme_change": "ES/EN use durable no-runtime/no-new-release wording; top video CTA targets MP4, HTML player explicitly requires local download/clone. Faithful previews refreshed."
+  },
+  "changed_paths_before_fix": [
     "A  AGENTS.md",
     "A  CONTRIBUTING.en.md",
     "M  CONTRIBUTING.md",
@@ -508,18 +579,25 @@
     "M  skills/cursor-liquido/SKILL.md",
     "?? .gitattributes"
   ],
-  "documentation_checks_passed": true,
-  "known_unit_blockers": [
-    {
-      "test": "build is deterministic and dist/ matches a fresh build",
-      "cause": "Existing build includes every docs/media file in dist/manifest.json. New editorial covers, captions and OFL fonts make that frozen manifest stale. The in-memory build comparison changes only dist/manifest.json, not JS, CSS or standalone HTML.",
-      "resolution_requires_separate_approval": "Refresh release packaging manifest or change packaging policy outside this docs-only scope. No dist or assertion was modified."
-    },
-    {
-      "test": "public files carry no private paths, hosts, emails or credentials",
-      "cause": "Existing assertion classifies the required official public brandkit domain as a private link. The family brief requires that exact public reference. It was not hidden, encoded or removed to bypass the assertion.",
-      "resolution_requires_separate_approval": "Review the obsolete URL denylist in a separate test change. Tests remain byte-identical."
-    }
-  ],
-  "execution_output_notice": "Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy."
+  "changed_paths": [
+    "README.en.md",
+    "README.md",
+    "dist/manifest.json",
+    "docs/preview.en.html",
+    "docs/preview.es.html",
+    "reports/browser-test-report.json",
+    "reports/docs-brandkit-verification.json",
+    "reports/docs-browser-verification.json",
+    "reports/docs-existing-tests.json",
+    "reports/docs-player-en-desktop.png",
+    "reports/docs-player-en-mobile.png",
+    "reports/docs-player-es-desktop.png",
+    "reports/docs-player-es-mobile.png",
+    "reports/docs-preview-en-desktop.png",
+    "reports/docs-preview-en-mobile.png",
+    "reports/docs-preview-es-desktop.png",
+    "reports/docs-preview-es-mobile.png",
+    "reports/docs-showcase-es-mobile.png",
+    "tests/unit/release.test.cjs"
+  ]
 }
