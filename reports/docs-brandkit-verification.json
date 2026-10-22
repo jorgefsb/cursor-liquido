@@ -2,7 +2,7 @@
   "passed": true,
   "baseline": "6035bbd24c06b23be353d9af68bd67d33b22f34e",
   "branch": "docs/brandkit-es-en-20261022",
-  "verification_scope": "Local pre-commit verification after documentary fixes; earlier failing run retained as history. No remote writes.",
+  "verification_scope": "Local pre-commit working tree. Final commit ID is reported separately to avoid a self-referential artifact hash.",
   "faq": {
     "es": {
       "count": 6,
@@ -422,6 +422,10 @@
       "exit_code": 0
     },
     {
+      "command": "node scripts/docs-browser.cjs",
+      "exit_code": 0
+    },
+    {
       "command": "npm run test:browser",
       "exit_code": 0
     },
@@ -437,8 +441,23 @@
     "Preview is a faithful local Markdown render, not a screenshot of published GitHub."
   ],
   "initial_issue_resolved": "Relative PLAYWRIGHT_MODULE failed Node resolution; suites reran successfully with an absolute module path.",
+  "changed_paths": [
+    " M reports/browser-test-report.json",
+    " M reports/docs-browser-verification.json",
+    " M reports/docs-existing-tests.json",
+    " M reports/docs-player-en-desktop.png",
+    " M reports/docs-player-en-mobile.png",
+    " M reports/docs-player-es-desktop.png",
+    " M reports/docs-player-es-mobile.png",
+    " M reports/docs-showcase-es-mobile.png",
+    " M scripts/docs-verify.py"
+  ],
   "documentation_checks_passed": true,
-  "execution_output_notice": "Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy.",
+  "known_unit_blockers": [],
+  "reviewed_documentary_changes": {
+    "dist/manifest.json": "Generated media metadata; original deterministic build and hashes remain mandatory.",
+    "tests/unit/release.test.cjs": "Exact public HTTPS host recognition with additional mutation/security tests."
+  },
   "previous_known_unit_blockers": [
     {
       "test": "build is deterministic and dist/ matches a fresh build",
@@ -451,7 +470,6 @@
       "resolution_requires_separate_approval": "Review the obsolete URL denylist in a separate test change. Tests remain byte-identical."
     }
   ],
-  "known_unit_blockers": [],
   "previous_existing_tests": [
     {
       "command": "npm test",
@@ -514,90 +532,6 @@
     },
     "readme_change": "ES/EN use durable no-runtime/no-new-release wording; top video CTA targets MP4, HTML player explicitly requires local download/clone. Faithful previews refreshed."
   },
-  "changed_paths_before_fix": [
-    "A  AGENTS.md",
-    "A  CONTRIBUTING.en.md",
-    "M  CONTRIBUTING.md",
-    "A  README.en.md",
-    "M  README.md",
-    "A  docs/ASSET-NOTICE.en.md",
-    "A  docs/ASSET-NOTICE.md",
-    "AM docs/REPOSITORY-DOCUMENTATION.en.md",
-    "AM docs/REPOSITORY-DOCUMENTATION.md",
-    "A  docs/accessibility-performance.en.md",
-    "M  docs/accessibility-performance.md",
-    "A  docs/api.en.md",
-    "M  docs/api.md",
-    "A  docs/design-direction.md",
-    "A  docs/integrations.en.md",
-    "M  docs/integrations.md",
-    "A  docs/media/brand/Inter-OFL.txt",
-    "A  docs/media/brand/Inter-static.ttf",
-    "A  docs/media/brand/Outfit-OFL.txt",
-    "A  docs/media/brand/Outfit-static.ttf",
-    "A  docs/media/cover-en-mobile.png",
-    "A  docs/media/cover-en.png",
-    "A  docs/media/cover-es-mobile.png",
-    "A  docs/media/cover-es.png",
-    "A  docs/media/walkthrough.en.vtt",
-    "A  docs/media/walkthrough.es.vtt",
-    "A  docs/preview.en.html",
-    "A  docs/preview.es.html",
-    "A  docs/quality-input-candidate.es.md",
-    "M  docs/quality-input-candidate.md",
-    "A  docs/reading.css",
-    "A  docs/roadmap.en.md",
-    "M  docs/roadmap.md",
-    "A  docs/rollback.en.md",
-    "M  docs/rollback.md",
-    "A  docs/showcase.en.html",
-    "A  docs/showcase.html",
-    "A  docs/walkthrough.en.md",
-    "A  docs/walkthrough.md",
-    "MM reports/browser-test-report.json",
-    "AM reports/docs-brand-source-hashes.json",
-    "A  reports/docs-brandkit-verification.json",
-    "A  reports/docs-browser-verification.json",
-    "AM reports/docs-existing-tests.json",
-    "A  reports/docs-player-en-desktop.png",
-    "A  reports/docs-player-en-mobile.png",
-    "A  reports/docs-player-es-desktop.png",
-    "A  reports/docs-player-es-mobile.png",
-    "A  reports/docs-preview-en-desktop.png",
-    "A  reports/docs-preview-en-mobile.png",
-    "A  reports/docs-preview-es-desktop.png",
-    "A  reports/docs-preview-es-mobile.png",
-    "A  reports/docs-recording-overview.jpg",
-    "A  reports/docs-showcase-en-desktop.png",
-    "A  reports/docs-showcase-en-mobile.png",
-    "A  reports/docs-showcase-es-desktop.png",
-    "A  reports/docs-showcase-es-mobile.png",
-    "A  scripts/docs-browser.cjs",
-    "AM scripts/docs-render.py",
-    "A  scripts/docs-verify.py",
-    "A  skills/cursor-liquido/SKILL.es.md",
-    "M  skills/cursor-liquido/SKILL.md",
-    "?? .gitattributes"
-  ],
-  "changed_paths": [
-    "README.en.md",
-    "README.md",
-    "dist/manifest.json",
-    "docs/preview.en.html",
-    "docs/preview.es.html",
-    "reports/browser-test-report.json",
-    "reports/docs-brandkit-verification.json",
-    "reports/docs-browser-verification.json",
-    "reports/docs-existing-tests.json",
-    "reports/docs-player-en-desktop.png",
-    "reports/docs-player-en-mobile.png",
-    "reports/docs-player-es-desktop.png",
-    "reports/docs-player-es-mobile.png",
-    "reports/docs-preview-en-desktop.png",
-    "reports/docs-preview-en-mobile.png",
-    "reports/docs-preview-es-desktop.png",
-    "reports/docs-preview-es-mobile.png",
-    "reports/docs-showcase-es-mobile.png",
-    "tests/unit/release.test.cjs"
-  ]
+  "history_notice": "Earlier failures are retained above and in git history. Current blockers come from real command exits, never hardcoded conclusions.",
+  "execution_output_notice": "Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy."
 }

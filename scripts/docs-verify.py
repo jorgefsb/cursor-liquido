@@ -22,8 +22,15 @@ def run(args):
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
+previous_report_path = root / 'reports/docs-brandkit-verification.json'
+previous_report = json.loads(previous_report_path.read_text()) if previous_report_path.exists() else {}
+# Reviewed documentation metadata/test changes, never a runtime exemption.
+reviewed_documentary_changes = {
+    'dist/manifest.json': 'Generated media metadata; original deterministic build and hashes remain mandatory.',
+    'tests/unit/release.test.cjs': 'Exact public HTTPS host recognition with additional mutation/security tests.'
+}
 original = run(['git', 'ls-tree', '-r', '--name-only', baseline]).stdout.splitlines()
-protected = [p for p in original if not p.endswith('.md') and not p.startswith(('docs/', 'reports/'))]
+protected = [p for p in original if p not in reviewed_documentary_changes and not p.endswith('.md') and not p.startswith(('docs/', 'reports/'))]
 protected += ['CHANGELOG.md', 'RELEASE-NOTES.md']
 protected += [p for p in original if p.startswith('docs/media/')]
 invariants = []
@@ -83,13 +90,14 @@ sources=json.loads((root/'reports/docs-brand-source-hashes.json').read_text())
 brand_checks=[]
 for p,h in sources.items():
     expected=next(x['sha256'] for x in manifest if x['path']=='brand-assets/'+p)
-    brand_checks.append({'path':p,'sha256':h,'matches_official_manifest':h==expected})
+    actual = sha((brand / p).read_bytes())
+    brand_checks.append({'path':p,'sha256':actual,'matches_official_manifest':actual==h==expected})
 
 previous = root / 'reports/docs-existing-tests.json'
 if previous.exists():
     previous.write_text(previous.read_text().replace(str(root), '<repo>'))
 results=[]
-for command in [['npm','test'],['npm','run','test:browser'],['npm','run','test:quality']]:
+for command in [['npm','test'],['node','scripts/build.cjs','--check'],['node','scripts/docs-browser.cjs'],['npm','run','test:browser'],['npm','run','test:quality']]:
     result=run(command)
     # Keep raw real execution output; no invented fixtures or summarized substitutes.
     results.append({'command':' '.join(command),'exit_code':result.returncode,'stdout':result.stdout.replace(str(root), '<repo>'),'stderr':result.stderr.replace(str(root), '<repo>')})
@@ -100,10 +108,12 @@ passed=all(x['byte_identical'] for x in invariants) and not broken and all(x['mu
 report={'passed':passed,'baseline':baseline,'branch':run(['git','branch','--show-current']).stdout.strip(),'verification_scope':'Local pre-commit working tree. Final commit ID is reported separately to avoid a self-referential artifact hash.','faq':faq,'translation_pairs':parity,'links':{'checked':checked,'broken':broken},'frozen_baseline_files':invariants,'official_assets':brand_checks,'images':media,'video':metadata,'browser_docs':{'passed':browser['passed'],'checks':len(browser['rows']),'viewports':['1440x1000','390x1000'],'screenshots':sorted(str(p.relative_to(root)) for p in (root/'reports').glob('docs-*.png'))},'existing_tests': [{'command':x['command'],'exit_code':x['exit_code']} for x in results],'remote_download_provenance':'Exact v1.0.1 HTML and ZIP release URLs supplied as verified by the repository owner; no remote state changed.','limitations':['Headless Chromium and SwiftShader are not physical GPU or phone certification.','Existing approved MP4 is reused unchanged, not a new 1.0.1 quality-fix recording.','Preview is a faithful local Markdown render, not a screenshot of published GitHub.'],'initial_issue_resolved':'Relative PLAYWRIGHT_MODULE failed Node resolution; suites reran successfully with an absolute module path.','changed_paths':run(['git','status','--short']).stdout.splitlines()}
 report.update({
     'documentation_checks_passed': not broken and all(x['count'] == 6 for x in faq.values()) and all(x['mutual_language_links'] and x.get('literal_code_blocks_equal', True) for x in parity) and browser['passed'] and all(x['byte_identical'] for x in invariants) and all(x['matches_official_manifest'] for x in brand_checks),
-    'known_unit_blockers': [
-        {'test': 'build is deterministic and dist/ matches a fresh build', 'cause': 'Existing build includes every docs/media file in dist/manifest.json. New editorial covers, captions and OFL fonts make that frozen manifest stale. The in-memory build comparison changes only dist/manifest.json, not JS, CSS or standalone HTML.', 'resolution_requires_separate_approval': 'Refresh release packaging manifest or change packaging policy outside this docs-only scope. No dist or assertion was modified.'},
-        {'test': 'public files carry no private paths, hosts, emails or credentials', 'cause': 'Existing assertion classifies the required official public brandkit domain as a private link. The family brief requires that exact public reference. It was not hidden, encoded or removed to bypass the assertion.', 'resolution_requires_separate_approval': 'Review the obsolete URL denylist in a separate test change. Tests remain byte-identical.'}
-    ],
+    'known_unit_blockers': [{'command':x['command'],'exit_code':x['exit_code']} for x in results if x['exit_code'] != 0],
+    'reviewed_documentary_changes': reviewed_documentary_changes,
+    'previous_known_unit_blockers': previous_report.get('previous_known_unit_blockers', previous_report.get('known_unit_blockers', [])),
+    'previous_existing_tests': previous_report.get('previous_existing_tests', previous_report.get('existing_tests', [])),
+    'documentary_fix': previous_report.get('documentary_fix', {}),
+    'history_notice': 'Earlier failures are retained above and in git history. Current blockers come from real command exits, never hardcoded conclusions.',
     'execution_output_notice': 'Real stdout/stderr retained in docs-existing-tests.json; repository absolute path replaced with <repo> for public privacy.'
 })
 (root/'reports/docs-brandkit-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

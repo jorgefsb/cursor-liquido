@@ -72,11 +72,11 @@
         ],
         "colours": [
           "rgb(34, 33, 31)",
-          "rgb(244, 232, 213)",
-          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(244, 232, 213)"
+          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)"
         ],
         "webgl": false
       }
@@ -89,9 +89,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 16931,
-          "chromatic": 16830,
-          "neutral": 2,
+          "active": 17123,
+          "chromatic": 17099,
+          "neutral": 0,
           "pixels": 1140000,
           "error": 0
         }
@@ -110,10 +110,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 26861,
-          "brightNeutral": 16924,
-          "chromaticRatio": 0.07674571428571429,
-          "neutralRatio": 0.04835428571428572
+          "chromatic": 20220,
+          "brightNeutral": 16961,
+          "chromaticRatio": 0.05777142857142857,
+          "neutralRatio": 0.04846
         }
       }
     },
@@ -122,12 +122,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.6787109375,
+        "peak": 1.630859375,
         "last": {
           "frame": 90,
-          "active": 49293,
-          "chromatic": 48337,
-          "neutral": 151,
+          "active": 48626,
+          "chromatic": 48355,
+          "neutral": 39,
           "pixels": 1140000,
           "error": 0
         }
@@ -146,10 +146,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 45613,
-          "brightNeutral": 16952,
-          "chromaticRatio": 0.13032285714285713,
-          "neutralRatio": 0.048434285714285714
+          "chromatic": 44379,
+          "brightNeutral": 16973,
+          "chromaticRatio": 0.12679714285714286,
+          "neutralRatio": 0.04849428571428571
         }
       }
     },
@@ -256,12 +256,12 @@
           "translate(-50%, -50%) translateY(14px) scale(0.2)"
         ],
         "colours": [
-          "rgb(34, 33, 31)",
-          "rgb(244, 232, 213)",
-          "rgb(34, 33, 31)",
+          "rgb(255, 107, 53)",
           "rgb(244, 232, 213)",
           "rgb(255, 107, 53)",
-          "rgb(34, 33, 31)"
+          "rgb(244, 232, 213)",
+          "rgb(255, 107, 53)",
+          "rgb(244, 232, 213)"
         ],
         "webgl": false
       }
@@ -274,9 +274,9 @@
         "peak": 0.9423828125,
         "last": {
           "frame": 90,
-          "active": 17224,
-          "chromatic": 16923,
-          "neutral": 52,
+          "active": 17803,
+          "chromatic": 17736,
+          "neutral": 0,
           "pixels": 1140000,
           "error": 0
         }
@@ -295,10 +295,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 25895,
-          "brightNeutral": 16956,
-          "chromaticRatio": 0.07398571428571428,
-          "neutralRatio": 0.048445714285714286
+          "chromatic": 26685,
+          "brightNeutral": 16955,
+          "chromaticRatio": 0.07624285714285714,
+          "neutralRatio": 0.04844285714285714
         }
       }
     },
@@ -307,12 +307,12 @@
       "status": "PASS",
       "detail": {
         "radius": 18,
-        "peak": 1.416015625,
+        "peak": 1.314453125,
         "last": {
           "frame": 90,
-          "active": 49386,
-          "chromatic": 49232,
-          "neutral": 19,
+          "active": 49177,
+          "chromatic": 48239,
+          "neutral": 92,
           "pixels": 1140000,
           "error": 0
         }
@@ -331,10 +331,10 @@
         },
         "after": {
           "pixels": 350000,
-          "chromatic": 47230,
-          "brightNeutral": 16897,
-          "chromaticRatio": 0.13494285714285714,
-          "neutralRatio": 0.04827714285714286
+          "chromatic": 27026,
+          "brightNeutral": 16965,
+          "chromaticRatio": 0.07721714285714286,
+          "neutralRatio": 0.04847142857142857
         }
       }
     },
@@ -483,9 +483,9 @@
         "defaultWalls": 1,
         "bothWalls": 2,
         "dotColours": [
-          "rgb(0, 170, 255)",
+          "rgb(244, 232, 213)",
           "rgb(34, 33, 31)",
-          "rgb(244, 232, 213)"
+          "rgb(0, 170, 255)"
         ]
       }
     },
@@ -509,35 +509,10 @@
           },
           "pending": null,
           "raf": 0,
-          "capturedAt": 424,
+          "capturedAt": 427.30000000447035,
           "layerPointerEvents": "none"
         },
         "queued": {
-          "dots": 6,
-          "splats": 0,
-          "stats": {
-            "state": "running",
-            "frames": 2,
-            "splats": 0,
-            "impacts": 0,
-            "wallCount": 1,
-            "error": null,
-            "quality": "economy",
-            "play": "full",
-            "radius": 18,
-            "maskUploads": 2
-          },
-          "pending": {
-            "x": 175,
-            "y": 440,
-            "dx": 75,
-            "dy": 0
-          },
-          "raf": 4,
-          "capturedAt": 929.3999999985099,
-          "layerPointerEvents": "none"
-        },
-        "on": {
           "dots": 6,
           "splats": 1,
           "stats": {
@@ -554,7 +529,27 @@
           },
           "pending": null,
           "raf": 5,
-          "capturedAt": 965.3999999985099,
+          "capturedAt": 868.7000000029802,
+          "layerPointerEvents": "none"
+        },
+        "on": {
+          "dots": 6,
+          "splats": 1,
+          "stats": {
+            "state": "running",
+            "frames": 4,
+            "splats": 1,
+            "impacts": 0,
+            "wallCount": 1,
+            "error": null,
+            "quality": "economy",
+            "play": "full",
+            "radius": 18,
+            "maskUploads": 2
+          },
+          "pending": null,
+          "raf": 7,
+          "capturedAt": 897.7000000029802,
           "layerPointerEvents": "none"
         }
       }
@@ -691,6 +686,12 @@
             "trusted": true,
             "pointerType": null,
             "prevented": false
+          },
+          {
+            "type": "touchmove",
+            "trusted": true,
+            "pointerType": null,
+            "prevented": false
           }
         ],
         "pending": null,
@@ -738,9 +739,9 @@
         "version": "0.1.1-recovery",
         "last": {
           "frame": 90,
-          "active": 48694,
-          "chromatic": 48603,
-          "neutral": 24,
+          "active": 47967,
+          "chromatic": 46941,
+          "neutral": 146,
           "pixels": 1140000,
           "error": 0
         }
@@ -750,33 +751,33 @@
   "screenshots": [
     {
       "file": "test-output/dist-file-mucho.png",
-      "sha256": "b5eb96b512a502e4671fd1c4483c1f82c410f85de36fdecab9269551331618a3",
-      "bytes": 111967
+      "sha256": "7bc1241734a0bedcb994b95f14aa7324bd1ec6ddc851d0fd0f47206b3b76b751",
+      "bytes": 84798
     },
     {
       "file": "test-output/dist-file-hardcore.png",
-      "sha256": "e3206efa100e287135c353dcc612ff748a8e40b8676e59c5854696f9f80b3591",
-      "bytes": 144511
+      "sha256": "f443c1275f237016dd90d0f40e1523f15e9fed448b26763e9a5443596dc7be54",
+      "bytes": 150766
     },
     {
       "file": "test-output/dist-file-contact.png",
-      "sha256": "61e248af4ccbc20630aa87433630ca4b07a0e1a13a36ad168bc6419256d7d5a8",
-      "bytes": 93403
+      "sha256": "019ee6f5b2c12a91cd16b5f39dcf87e39ac9e9ec0872980ca2244d1cbbe67b35",
+      "bytes": 94492
     },
     {
       "file": "test-output/dist-http-mucho.png",
-      "sha256": "c25b20417f330aad00b8e580b0733a68538d9c4d5058db57618096de27793f8d",
-      "bytes": 115087
+      "sha256": "421c81ca790ca58983eaf3ebf212d260ba32ef20c64be14ca23a372ce7e5fe49",
+      "bytes": 113311
     },
     {
       "file": "test-output/dist-http-hardcore.png",
-      "sha256": "5b823ab416d2327b06cad06cc56661c485f1c1e4af5affe895fd99df3a3a8966",
-      "bytes": 143560
+      "sha256": "ac7290e93a6f642d82631518062bfedeaa7f362b5b5b550931313925d0ba6860",
+      "bytes": 104634
     },
     {
       "file": "test-output/dist-http-contact.png",
-      "sha256": "e0071c933058bf812e3a7f6b6b9ac08e8e9efb2e2a574b7f664529b2bb9d4461",
-      "bytes": 94632
+      "sha256": "5899a433003e26286653b9f1fe20bec6dd12e456b9c3ad04d4147405c37476eb",
+      "bytes": 94593
     }
   ]
 }
