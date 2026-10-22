@@ -21,8 +21,8 @@ const APPROVED = {
   css: '2ab1b38486d80397480ac29827939eee800e275206419c65e8d0ef8d97ad48a1'
 };
 const approvedWrapper = () => read('src/liquid-cursor.js').toString()
-  .replace('/* Cursor líquido 1.0.1-rc.1. MIT', '/* Cursor líquido 0.1.0. MIT')
-  .replace("version: '1.0.1-rc.1',", "version: '0.1.1-recovery',");
+  .replace('/* Cursor líquido 1.0.1. MIT', '/* Cursor líquido 0.1.0. MIT')
+  .replace("version: '1.0.1',", "version: '0.1.1-recovery',");
 
 test('golden engine is byte-identical', () => {
   assert.equal(GOLDEN_ENGINE_SHA256, '3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230');
@@ -38,7 +38,7 @@ test('engine keeps the Pavel Dobryakov MIT attribution and licence file', () => 
 test('adapter is byte-identical, wrapper and CSS differ only in version metadata', () => {
   assert.equal(sha256(read('src/approved-engine-adapter.js')), APPROVED.adapter);
   assert.equal(sha256(Buffer.from(approvedWrapper())), APPROVED.wrapper);
-  const css = read('src/liquid-cursor.css').toString().replace('/* Cursor líquido 1.0.1-rc.1.', '/* Cursor líquido 0.1.0.');
+  const css = read('src/liquid-cursor.css').toString().replace('/* Cursor líquido 1.0.1.', '/* Cursor líquido 0.1.0.');
   assert.equal(sha256(Buffer.from(css)), APPROVED.css);
 });
 
@@ -77,7 +77,7 @@ test('bundle is banner + sources concatenated unmodified in load order', () => {
   const dist = read('dist/cursor-liquido.js');
   const body = Buffer.concat(LOAD_ORDER.map(read));
   assert(dist.subarray(dist.length - body.length).equals(body));
-  assert.match(dist.subarray(0, dist.length - body.length).toString(), /^\/\*! Cursor líquido 1\.0\.1-rc\.1 \| MIT/);
+  assert.match(dist.subarray(0, dist.length - body.length).toString(), /^\/\*! Cursor líquido 1\.0\.1 \| MIT/);
   assert.equal(sha256(read('dist/cursor-liquido.css')), sha256(read('src/liquid-cursor.css')));
 });
 
@@ -87,7 +87,7 @@ test('manifest lists sha256 of every release file plus the golden engine literal
   assert.equal(m.version, pkg.version);
   assert.equal(m.golden_engine_sha256, GOLDEN_ENGINE_SHA256);
   assert.equal(m.golden_adapter_sha256, APPROVED.adapter);
-  assert.equal(m.release_status, 'local candidate; not stable or published');
+  assert.equal(m.release_status, 'stable');
   assert.deepEqual(m.load_order, LOAD_ORDER);
   for (const rel of ['dist/cursor-liquido.js', 'dist/cursor-liquido.css', 'dist/LICENSE', 'dist/THIRD_PARTY_NOTICES',
     'examples/cursor-liquido.html', 'demo/index.html', ENGINE, 'docs/media/cursor-liquido-restaurado-real.mp4']) {

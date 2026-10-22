@@ -13,7 +13,7 @@ fs.mkdirSync(HERE,{recursive:true});
   const requests=[];p.on('request',q=>{if(/^https?:/.test(q.url()))requests.push(q.url());});
   await p.goto('file://'+path.join(REPO,'dist/cursor-liquido-standalone.html'));
   if(variant==='baseline')await p.evaluate(()=>{ window.FluidEngine=Object.getPrototypeOf(window.FluidEngine); });
-  assert.equal(await p.evaluate(()=>LiquidCursor.version),'1.0.1-rc.1');
+  assert.equal(await p.evaluate(()=>LiquidCursor.version),'1.0.1');
   await p.evaluate(intensity=>{
    const c=LiquidCursor.mount({intensity});const e=c.engine;if(!e.boot())throw Error('No WebGL');
    // Cancel the automatic frame after the real handler has queued each input.

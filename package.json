@@ -1,6 +1,6 @@
 {
   "name": "cursor-liquido",
-  "version": "1.0.1-rc.1",
+  "version": "1.0.1",
   "description": "Liquid cursor trail for the web: dots or a WebGL2 fluid behind the native pointer. Zero runtime dependencies.",
   "private": true,
   "license": "MIT",

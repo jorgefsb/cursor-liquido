@@ -50,8 +50,8 @@ SOFTWARE.
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="data:,">
-<title>Cursor líquido 1.0.1-rc.1 · demo</title>
-<style>/* Cursor líquido 1.0.1-rc.1. Layers never take input, never hide the native cursor. */
+<title>Cursor líquido 1.0.1 · demo</title>
+<style>/* Cursor líquido 1.0.1. Layers never take input, never hide the native cursor. */
 .liquid-cursor-layer {
   position: fixed;
   inset: 0;
@@ -101,7 +101,7 @@ footer { padding: 24px; border-top: 1px solid #333; background: #0a0a0a; }
 </head>
 <body>
 <header data-liquid-obstacle>
-  <h1>Cursor líquido 1.0.1-rc.1</h1>
+  <h1>Cursor líquido 1.0.1</h1>
   <p>Demo del paquete <code>dist/</code>, mismo motor aprobado. Mueve el mouse en el área oscura y acércate al panel claro, al obstáculo naranja y a las orillas. El cursor del sistema no cambia.</p>
   <div class="controls">
     <fieldset class="juega">
@@ -128,7 +128,7 @@ footer { padding: 24px; border-top: 1px solid #333; background: #0a0a0a; }
   <p>El selector escribe <code>data-jz-level</code> en esta página, como lo haría un control Juega. El módulo solo lee ese atributo. Los lienzos no reciben clics, no capturan el dedo y no bloquean el scroll. Con movimiento reducido o sin WebGL2 la página sigue funcionando. Sin WebGL2, Mucho y Hardcore quedan apagados y Poquito sigue disponible.</p>
   <pre id="status">Esperando movimiento…</pre>
 </footer>
-<script>/*! Cursor líquido 1.0.1-rc.1 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
+<script>/*! Cursor líquido 1.0.1 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
  * Fluid display normal/shading adapted from WebGL Fluid Simulation, (c) 2017 Pavel Dobryakov, MIT.
  * Bundle of, in load order, unmodified: src/approved-fluid-v3.1.js, src/approved-engine-adapter.js, src/quality-input-guard.js, src/liquid-cursor.js.
  * golden_engine_sha256 3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230
@@ -709,7 +709,7 @@ footer { padding: 24px; border-top: 1px solid #333; background: #0a0a0a; }
   }
   root.FluidEngine=QualitySafeAdapter;
 })(window);
-/* Cursor líquido 1.0.1-rc.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
+/* Cursor líquido 1.0.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
  * Intensities: nada (off), poquito (orange dots, 2D canvas), mucho (fluid
  * 10 px), hardcore (fluid 18 px). Juice contract on <html data-jz-level>:
  * off=nada, subtle=poquito, full=mucho, hard=hardcore.
@@ -865,7 +865,7 @@ footer { padding: 24px; border-top: 1px solid #333; background: #0a0a0a; }
   }
 
   const LiquidCursor = {
-    version: '1.0.1-rc.1',
+    version: '1.0.1',
     intensities: INTENSITIES,
     juiceLevels: JZ_LEVELS,
     normalize,

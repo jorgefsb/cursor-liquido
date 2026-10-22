@@ -62,7 +62,7 @@ function build() {
     license: pkg.license,
     golden_engine_sha256: GOLDEN_ENGINE_SHA256,
     golden_adapter_sha256: GOLDEN_ADAPTER_SHA256,
-    release_status: 'local candidate; not stable or published',
+    release_status: 'stable',
     engine: ENGINE,
     load_order: LOAD_ORDER,
     files

@@ -1,4 +1,4 @@
-# 1.0.1-rc.1 — local candidate, not stable
+# 1.0.1: adaptive-quality input preservation
 
 The approved engine and adapter remain byte-identical. An external subclass,
 loaded after the approved adapter and before the wrapper, retains only a real

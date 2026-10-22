@@ -1,4 +1,4 @@
-/*! Cursor líquido 1.0.1-rc.1 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
+/*! Cursor líquido 1.0.1 | MIT (c) 2026 Jorge Suárez | see LICENSE and THIRD_PARTY_NOTICES
  * Fluid display normal/shading adapted from WebGL Fluid Simulation, (c) 2017 Pavel Dobryakov, MIT.
  * Bundle of, in load order, unmodified: src/approved-fluid-v3.1.js, src/approved-engine-adapter.js, src/quality-input-guard.js, src/liquid-cursor.js.
  * golden_engine_sha256 3d478cc836969c216812c7e479724e0e204bbb76a26df24c2414568883021230
@@ -579,7 +579,7 @@
   }
   root.FluidEngine=QualitySafeAdapter;
 })(window);
-/* Cursor líquido 1.0.1-rc.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
+/* Cursor líquido 1.0.1. MIT, (c) 2026 Jorge Suárez. Zero runtime dependencies.
  * Intensities: nada (off), poquito (orange dots, 2D canvas), mucho (fluid
  * 10 px), hardcore (fluid 18 px). Juice contract on <html data-jz-level>:
  * off=nada, subtle=poquito, full=mucho, hard=hardcore.
@@ -735,7 +735,7 @@
   }
 
   const LiquidCursor = {
-    version: '1.0.1-rc.1',
+    version: '1.0.1',
     intensities: INTENSITIES,
     juiceLevels: JZ_LEVELS,
     normalize,

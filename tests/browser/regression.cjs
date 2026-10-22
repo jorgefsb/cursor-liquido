@@ -169,7 +169,7 @@ async function demoSuite(b, label, url, w) {
       autoMounted: 'fluidCursor' in window, layers: document.querySelectorAll('.liquid-cursor-layer').length,
       dotHosts: document.querySelectorAll('.liquid-original-dots').length, source: LiquidCursor.current.stats.source
     }));
-    assert.deepEqual(v, { version: '1.0.1-rc.1', engine: 'function', adapter: 'function', autoMounted: false, layers: 2, dotHosts: 1, source: 'data-jz-level' });
+    assert.deepEqual(v, { version: '1.0.1', engine: 'function', adapter: 'function', autoMounted: false, layers: 2, dotHosts: 1, source: 'data-jz-level' });
     return v;
   });
   for (const [value, name, radius] of [['off', 'nada', 0], ['subtle', 'poquito', 0], ['full', 'mucho', 10], ['hard', 'hardcore', 18]]) {

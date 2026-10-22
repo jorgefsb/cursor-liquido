@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1-rc.1 (unpublished candidate)
+## 1.0.1 · 2026-10-22
 
 - Recover real queued input across the first adaptive quality reduction using an external guard. No shader, field, budget-stop, or real resize/scroll changes.
 - Build an autonomous candidate HTML and add a deterministic transition regression.

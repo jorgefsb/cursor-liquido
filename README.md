@@ -1,5 +1,3 @@
-> Local candidate **1.0.1-rc.1**, not stable or published. See [scope](docs/quality-input-candidate.md).
-
 # Cursor líquido
 
 Una estela para el puntero web: puntitos ligeros o un fluido WebGL2 que choca con los bloques de tu página. El cursor del sistema no cambia, la capa decorativa no intercepta clics y no hay dependencias en runtime.
@@ -8,7 +6,7 @@ Si te gustan los efectos de las páginas de Jorge, aquí tienes este cursor grat
 
 ![Cursor líquido en Hardcore, captura animada de una grabación real](docs/media/cursor-liquido-demo.gif)
 
-Versión 1.0.0 · MIT · [video MP4 de la grabación](docs/media/cursor-liquido-restaurado-real.mp4)
+Versión 1.0.1 · MIT · [video MP4 de la grabación](docs/media/cursor-liquido-restaurado-real.mp4)
 
 ## Cuatro intensidades
 
@@ -45,7 +43,7 @@ Marca los bloques sólidos que el fluido debe rodear:
 <aside data-liquid-obstacle>…</aside>
 ```
 
-Descarga la [versión 1.0.0](https://github.com/jorgefsb/cursor-liquido/releases/tag/v1.0.0) o clona este repositorio. Usa `dist/` y compara sus hashes con `dist/manifest.json`. No hay paquete publicado en npm: no uses `npm install cursor-liquido`.
+Descarga la [versión 1.0.1](https://github.com/jorgefsb/cursor-liquido/releases/tag/v1.0.1) o clona este repositorio. Usa `dist/` y compara sus hashes con `dist/manifest.json`. No hay paquete publicado en npm: no uses `npm install cursor-liquido`.
 
 ### Sin menú visible
 
@@ -74,7 +72,8 @@ Probado en Chromium headless con WebGL por software. No se promete el mismo resu
 ```sh
 npm ci
 npm test               # hash del motor, build determinista, manifest, sintaxis, privacidad
-npm run test:browser   # navegador real sobre dist/ (file:// y HTTP), 40 casos
+npm run test:browser   # navegador real sobre dist/ (file:// y HTTP), 42 casos
+npm run test:quality   # 8 comparaciones A-B-B-A de reducción de calidad y sus protecciones
 ```
 
 Para reutilizar un Playwright ya instalado: `PLAYWRIGHT_MODULE=/ruta/a/node_modules/playwright npm run test:browser`. El último resultado está en [reports/browser-test-report.json](reports/browser-test-report.json).
